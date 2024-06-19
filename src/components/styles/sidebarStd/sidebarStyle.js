@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
-border: 1px solid red;
+/* border: 1px solid red; */
 display: flex;
 flex-direction: column;
 align-items: center;
 gap: 24px;
-width: 256px;
+width: 100%;
+max-width: 256px;
 height: 100vh;
 padding: 24px;
 flex-shrink: 0;
@@ -16,6 +17,7 @@ background: #FFF;
 /* position: fixed; */
 `
 export const PageWrapper = styled.div`
+/* border: 1px solid red; */
 display: flex;
 padding: 10px 12px;
 align-items: center;
@@ -43,5 +45,6 @@ width: 100%;
 /* position: absolute; */
 bottom: 24px;
 left: 24px;
+box-sizing: border-box;
 
 `

@@ -5,14 +5,13 @@ import homeBG from "../../../assets/homeAssets/homeBG.jpeg";
 export const HomeContainer = styled.div`
   /* border: 1px solid red; */
   /* background-image: url(${homeBG}); */
-  background-position: 10% 78%;
+  background-position: 10% 88%;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(to bottom,rgba(0, 0, 100, 0.5), rgba(0, 0, 110, 0.5)), url(${homeBG});
   /* width: 1420px; */
   /* height: 900px; */
   /* width: 100%; */
-  /* height: 100vh; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -138,6 +137,7 @@ export const ReqDemoButton = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  margin-top: 30px;
   ///
   display: inline-flex;
   padding: 14px 30px;

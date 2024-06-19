@@ -19,23 +19,29 @@ const SidebarComponent = () => {
           <ReqDemoButton2 $borderRadius36 $maxWidth $padding>
             Logotype
           </ReqDemoButton2>
-
+        
+        <Link to="/location" style={{width: "100%", textDecoration: "none"}}>
           <PageWrapper>
             <img src={locationIcon} alt="locationIcon" />
             Seoul
           </PageWrapper>
+        </Link>
 
          <HrLine/>
 
-         <div style={{display: "flex", flexDirection: "column", gap: "8px", width: "100%"}}>
+         <div style={{display: "flex", flexDirection: "column", gap: "8px", width: "100%",}}>
+          <Link to="/leads" style={{textDecoration: "none"}}>
          <PageWrapper>
             <img src={leadsIcon} alt="leadsIcon" />
             Leads
           </PageWrapper>
+          </Link>
+          <Link to="/teachers" style={{textDecoration: "none"}}>
          <PageWrapper>
             <img src={teachersIcon} alt="teachersIcon" />
             Teachers
           </PageWrapper>
+          </Link>
          <PageWrapper>
             <img src={groupsIcon} alt="groupsIcon" />
             Groups

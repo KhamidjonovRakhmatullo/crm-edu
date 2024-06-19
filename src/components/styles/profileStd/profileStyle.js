@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
-  border: 1px solid red;
-  height: 100vh;
-  background-color: #efeef8;
+  /* border: 1px solid red; */
+  padding: 40px;
 `;
 export const ProdileBox = styled.div`
   width: 340px;
   height: 294px;
   flex-shrink: 0;
-  margin: 40px;
   border-radius: 26px;
   border: 1px solid var(--200, #cfcbea);
   background: var(--Color-7, #fff);

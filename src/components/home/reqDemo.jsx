@@ -90,7 +90,9 @@ const ReqDemoComponent = () => {
               name="user-company-name"
             />
           </InputWrapper>
+          <Link to="/profile">
           <SendButton style={{width: "420px"}}>Send</SendButton>
+          </Link>
           <hr style={{ width: "100%", margin: "0px" }} />
           <ReqDemoLoginWrapper>
             <InputTitle>Are you already registered?</InputTitle>
@@ -123,7 +125,9 @@ const ReqDemoComponent = () => {
             </DemoContactIconWrapper>
           </ReqDemoContact>
 
+        <Link to="/profile" style={{ textDecoration: "none" }}>
           <ReqDemoButton2 $marginTop10>Request a demo</ReqDemoButton2>
+        </Link>
         </ReqDemoRight>
       </ReqDemoBody>
     </ReqDemoContainer>

@@ -7,6 +7,7 @@ import ForgotPasswordComponent from "./components/auth/forgotPassword";
 import ChangePasswordComponent from "./components/auth/changePassword";
 import ProfileComponent from "./components/profile/profile";
 import SidebarComponent from "./components/sidebar/sidebar";
+import LeadsComponent from "./components/leads/leads";
 
 const RoutesComponent = () => {
   const location = useLocation()
@@ -16,9 +17,17 @@ const RoutesComponent = () => {
   location.pathname !== "/forgot-password"&& 
   location.pathname !== "/change-password"; 
   return (
-    <div>
-      <>
-      {hideComponent && <SidebarComponent/>}
+    //sidebar and auth wrapper
+    <div style={{ display: "flex", width: "100%"}}>
+      
+            {hideComponent && <SidebarComponent/>}
+
+      {/* auth wrapper */}
+      <div style={{
+        width: "100%",
+        backgroundColor: "#efeef8", 
+        // padding: "40px"
+        }}>
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/request-demo" element={<ReqDemoComponent />} />
@@ -26,8 +35,10 @@ const RoutesComponent = () => {
           <Route path="/forgot-password" element={<ForgotPasswordComponent />} />
           <Route path="/change-password" element={<ChangePasswordComponent />} />
           <Route path="/profile" element={<ProfileComponent />} />
+          <Route path="/leads" element={<LeadsComponent />} />
         </Routes>
-      </>
+      </div>
+
     </div>
   );
 };
