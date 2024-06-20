@@ -23,7 +23,6 @@ export const GridAndColumnWrap = styled.div`
     border: 1px solid blue;
     padding: 10px 20px;
     display: flex;
-    padding: 10px 20px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -31,6 +30,7 @@ export const GridAndColumnWrap = styled.div`
     border: 1px solid var(--600, #2c2669);
     background-color: #2c2669;
     color: white;
+    cursor: pointer;
   }
 `;
 
@@ -77,89 +77,170 @@ export const TextAndNumber = styled.div`
 
 ////Sections
 export const TextSubject = styled.div`
-display: flex;
-gap: 10px;
-color: var(--600, #2C2669);
-font-family: "Public Sans";
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px; /* 133.333% */
-`
+  display: flex;
+  gap: 10px;
+  color: var(--600, #2c2669);
+  font-family: "Public Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+`;
 export const NumberSubject = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 24px;
-padding: 4px;
-border-radius: 999px;
-background: var(--100, #EFEEF8);
-//font
-color: var(--400, #A098D5);
-font-family: "Public Sans";
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: 16px; /* 114.286% */
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--100, #efeef8);
+  //font
+  color: var(--400, #a098d5);
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 114.286% */
+`;
 export const SubStudentWrapper = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0px 10px;
-height: 50px;
-flex-shrink: 0;
-border-radius: 6px;
-background: var(--100, #EFEEF8);
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--100, #efeef8);
+  margin-bottom: 10px;
+`;
 export const SubStudentLeft = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+`;
 export const SubStudentAvatar = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 30px;
-height: 30px;
-flex-shrink: 0;
-background-color: #2C2669;
-border-radius: 100%;
-color: var(--Color-7, #FFF);
-//font
-font-family: "Public Sans";
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 20px; /* 125% */
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  background-color: #2c2669;
+  border-radius: 100%;
+  color: var(--Color-7, #fff);
+  //font
+  font-family: "Public Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+`;
 
 export const StudentNameAndNumber = styled.div`
-display: flex;
-flex-direction: column;
-align-items: start;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+`;
 export const SubStudentName = styled.div`
-color: var(--600, #2C2669);
-font-family: "Public Sans";
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 16px; /* 114.286% */
-`
+  color: var(--600, #2c2669);
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 114.286% */
+`;
 export const SubStudentNumber = styled.div`
-color: var(--600, #2C2669);
-font-family: "Public Sans";
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 16px; /* 114.286% */
-`
+  color: var(--600, #2c2669);
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 114.286% */
+`;
 export const SubStudentRight = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+`;
+export const SubjectTextAndEdit = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+
+///TABLE
+export const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  /* Add more styles as needed */
+  background-color: #fafafb;
+  border-radius: 16px;
+  /* min-width: ; */
+`;
+
+export const TableHeader = styled.th`
+  background-color: #f2f2f2;
+  padding: 15px 0px;
+  text-align: left;
+  /* border: 1px solid red; */
+
+  color: var(--400, #a098d5);
+  font-family: "Public Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px; /* 116.667% */
+  /* border-radius: 0px 16px 0px 0px; */
+`;
+
+export const TableCell = styled.td`
+  /* border: 1px solid blue; */
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0px;
+  color: var(--600, #2c2669);
+
+  /* Bold/14px -> 16px */
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 114.286% */
+`;
+export const LeadsOrderNumber = styled.td`
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 8px;
-`
+min-width: 20px;
+`;
+export const LeadPhoneNumber = styled.td`
+  color: var(--500, #6053b9);
+
+  /* Medium/14px -> 20px */
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 114.286% */
+`;
+
+export const LeadNameAndAvatar = styled.td`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
+
+export const LeadName = styled.td`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: var(--400, #a098d5);
+`;

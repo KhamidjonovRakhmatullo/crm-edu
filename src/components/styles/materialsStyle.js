@@ -38,7 +38,7 @@ export const InputStyled = styled.input`
 
 export const SendButton = styled.div`
   display: flex;
-  /* width: 100%; */
+  width: 100%;
   padding: 10px 40px;
   flex-direction: column;
   justify-content: center;
@@ -56,9 +56,9 @@ export const SendButton = styled.div`
   font-weight: 400;
   line-height: 24px; /* 133.333% */
   &:hover {
-    background-color: #fff;
+    /* background-color: #fff;
     color: #2c2669;
-    border: 1px solid #2c2669;
+    border: 1px solid #2c2669; */
     cursor: pointer;
   }
 `;

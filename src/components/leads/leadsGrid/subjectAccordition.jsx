@@ -12,10 +12,13 @@ import {
   StudentNameAndNumber,
   SubStudentNumber,
   SubStudentRight,
+  SubjectTextAndEdit,
 } from "../../styles/leadsStd/leadStyle";
 import EditMenu from "./editMenu";
+import { sectionData } from "../../mock/leadMock/sectionData";
 
 const SubjectAccordition = () => {
+  const data = sectionData.maindata
   return (
     <div>
       <Accordion
@@ -23,36 +26,50 @@ const SubjectAccordition = () => {
           border: "1px solid #BFBAE3",
           boxShadow: "unset",
           minHeight: "64px",
-          padding: "0px 14px 14px 14px",
-          // display: "flex",
-          // flexDirection: "column",
-          // justifyContent: "center",
+          padding: "0px 14px 4px 14px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          // maxHeight: "300px",
+          // overflow: "scroll",
         }}
       >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon sx={{color:"#BFBAE3"}}/>}
+          // expandIcon={}
           aria-controls="panel1-content"
           id="panel1-header"
-          sx={{ border: "0px solid red", padding: "0px" }}
+          sx={{padding: "0px"}}
         >
+          <SubjectTextAndEdit>
           <TextSubject>
-            Elementry <NumberSubject>30</NumberSubject>
+            Elementry <NumberSubject>{data.length}</NumberSubject>
           </TextSubject>
+          <div style={{display: "flex"}}>
+          <ExpandMoreIcon sx={{color:"#BFBAE3"}}/>
+          <EditMenu />
+          </div>
+          </SubjectTextAndEdit>
         </AccordionSummary>
-        <SubStudentWrapper>
-          <SubStudentLeft>
-            <SubStudentAvatar>B</SubStudentAvatar>
-            <StudentNameAndNumber>
-              <SubStudentName>Shamsiddin Shoraximov</SubStudentName>
-              <SubStudentNumber>010-1111-2222</SubStudentNumber>
-            </StudentNameAndNumber>
-          </SubStudentLeft>
-          <SubStudentRight>
-            <div>!</div>
-            <EditMenu />
-          </SubStudentRight>
-        </SubStudentWrapper>
+       
+        {data.map((value, key)=> {
+          return(
+            <SubStudentWrapper>
+            <SubStudentLeft>
+              <SubStudentAvatar>{value.name[0]}</SubStudentAvatar>
+              <StudentNameAndNumber>
+                <SubStudentName>{value.name}</SubStudentName>
+                <SubStudentNumber>{value.phoneNumber}</SubStudentNumber>
+              </StudentNameAndNumber>
+            </SubStudentLeft>
+            <SubStudentRight>
+              <div>!</div>
+              <EditMenu />
+            </SubStudentRight>
+          </SubStudentWrapper>
+          )
+        })}
       </Accordion>
+      
     </div>
   );
 };

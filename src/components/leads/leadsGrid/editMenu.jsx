@@ -35,7 +35,6 @@ export default function EditMenu() {
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
-       style={{border: "1px solid red"}}
       >
         <MenuItem onClick={handleClose}>
             <BorderColorOutlinedIcon sx={{fontSize: "20px", marginRight: "10px"}}/> 
