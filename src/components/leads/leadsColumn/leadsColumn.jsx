@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, TableHeader, TableCell, LeadPhoneNumber, LeadName, LeadNameAndAvatar, LeadsOrderNumber  } from "../../styles/leadsStd/leadStyle";
+import { Table, TableHeader, TableCell, TablePhoneNumber, TableAvatarLetter, TableNameAndAvatar, TableOrderNumber, TableTr  } from "../../styles/materialsStyle";
 import EditMenu from "../leadsGrid/editMenu";
 import { sectionData } from "../../mock/leadMock/sectionData";
 
@@ -21,19 +21,19 @@ const LeadsColumn = () => {
             <tbody>
                 {data.map((value, key)=> {
                     return(
-                        <tr key={key}>
-                          <TableCell><LeadsOrderNumber>{value.id}</LeadsOrderNumber></TableCell>
+                        <TableTr key={key}>
+                          <TableCell><TableOrderNumber>{value.id}</TableOrderNumber></TableCell>
                           <TableCell>
-                              <LeadNameAndAvatar>
-                                  <LeadName>{value.name[0]}</LeadName> 
+                              <TableNameAndAvatar>
+                                  <TableAvatarLetter>{value.name[0]}</TableAvatarLetter> 
                                   {value.name}
-                              </LeadNameAndAvatar>
+                              </TableNameAndAvatar>
                           </TableCell>
-                          <TableCell><LeadPhoneNumber>{value.phoneNumber}</LeadPhoneNumber></TableCell>
+                          <TableCell><TablePhoneNumber>{value.phoneNumber}</TablePhoneNumber></TableCell>
                           <TableCell>{value.fromWhere}</TableCell>
                           <TableCell>{value.level}</TableCell>
                           <TableCell><EditMenu/></TableCell>
-                       </tr>
+                       </TableTr>
                     )
                 })}
             </tbody>

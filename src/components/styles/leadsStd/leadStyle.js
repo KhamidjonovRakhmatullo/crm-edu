@@ -16,22 +16,36 @@ export const LeadTopFilter = styled.div`
   margin-bottom: 20px;
 `;
 
-export const GridAndColumnWrap = styled.div`
-  /* border: 1px solid red; */
-  display: flex;
-  div {
-    border: 1px solid blue;
+export const GridButton = styled.div`
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    border-radius: 6px;
+    border-radius: 6px 0px 0px 6px;
     border: 1px solid var(--600, #2c2669);
     background-color: #2c2669;
     color: white;
     cursor: pointer;
-  }
+    &:hover{
+      background-color: transparent;
+    }
+`;
+
+export const ColumnButton = styled.div`
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 0px 6px 6px 0px;
+    border: 1px solid var(--600, #2c2669);
+    background-color: #2c2669;
+    color: white;
+    cursor: pointer;
+    &:hover{
+      background-color: transparent;
+    }
 `;
 
 export const LeadBody = styled.div`
@@ -169,78 +183,4 @@ export const SubjectTextAndEdit = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-`;
-
-
-///TABLE
-export const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-  /* Add more styles as needed */
-  background-color: #fafafb;
-  border-radius: 16px;
-  /* min-width: ; */
-`;
-
-export const TableHeader = styled.th`
-  background-color: #f2f2f2;
-  padding: 15px 0px;
-  text-align: left;
-  /* border: 1px solid red; */
-
-  color: var(--400, #a098d5);
-  font-family: "Public Sans";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 14px; /* 116.667% */
-  /* border-radius: 0px 16px 0px 0px; */
-`;
-
-export const TableCell = styled.td`
-  /* border: 1px solid blue; */
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0px;
-  color: var(--600, #2c2669);
-
-  /* Bold/14px -> 16px */
-  font-family: "Public Sans";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 16px; /* 114.286% */
-`;
-export const LeadsOrderNumber = styled.td`
-display: flex;
-justify-content: center;
-align-items: center;
-min-width: 20px;
-`;
-export const LeadPhoneNumber = styled.td`
-  color: var(--500, #6053b9);
-
-  /* Medium/14px -> 20px */
-  font-family: "Public Sans";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 16px; /* 114.286% */
-`;
-
-export const LeadNameAndAvatar = styled.td`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-`;
-
-export const LeadName = styled.td`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: 100px;
-  background: var(--400, #a098d5);
 `;

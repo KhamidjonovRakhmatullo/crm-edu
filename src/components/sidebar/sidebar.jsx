@@ -20,12 +20,10 @@ const SidebarComponent = () => {
             Logotype
           </ReqDemoButton2>
         
-        <Link to="/location" style={{width: "100%", textDecoration: "none"}}>
           <PageWrapper>
             <img src={locationIcon} alt="locationIcon" />
             Seoul
           </PageWrapper>
-        </Link>
 
          <HrLine/>
 

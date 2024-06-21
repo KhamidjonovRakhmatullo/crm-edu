@@ -4,9 +4,9 @@ export const ProfileContainer = styled.div`
   /* border: 1px solid red; */
   padding: 40px;
 `;
-export const ProdileBox = styled.div`
+export const ProfileBox = styled.div`
   width: 340px;
-  height: 294px;
+  min-height: 294px;
   flex-shrink: 0;
   border-radius: 26px;
   border: 1px solid var(--200, #cfcbea);
@@ -48,12 +48,27 @@ export const EditProfile = styled.div`
   }
 `;
 export const ProfileAvatar = styled.div`
+  display: flex;
+  justify-content: center;
+    align-items: center;
+  background-color: #EFEEF8;
+  min-width: 88px;
+  min-height: 88px;
   margin-top: 70px;
   border-radius: 999px;
   border: 4px solid var(--Color-7, #fff);
+  ///font
+  color: var(--600, #2C2669);
+
+/* Bold/30px -> 40px */
+font-family: "Public Sans";
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: 40px; /* 133.333% */
 `;
 export const ProfileInfo = styled.div`
-  margin: 42px 26px 0px 26px;
+  margin: 42px 26px 20px 26px;
   //font
   color: var(--600, #2c2669);
   font-family: "Public Sans";

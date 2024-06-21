@@ -42,6 +42,7 @@ export const ProfileWrapperPage = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
+margin-top: 160px;
 /* position: absolute; */
 bottom: 24px;
 left: 24px;

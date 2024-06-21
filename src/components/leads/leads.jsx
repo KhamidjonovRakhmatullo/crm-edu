@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
-  GridAndColumnWrap,
+  ColumnButton,
+  GridButton,
   LeadBody,
   LeadContainer,
   LeadTopFilter,
@@ -32,10 +33,10 @@ const LeadsComponent = () => {
   return (
     <LeadContainer>
       <LeadTopFilter>
-        <GridAndColumnWrap>
-          <div onClick={handleOpenGrid}>{svgGrid}</div>
-          <div onClick={handleOpenColumn}>{svgCloumn}</div>
-        </GridAndColumnWrap>
+        <div style={{display: "flex"}}>
+          <GridButton onClick={handleOpenGrid}>{svgGrid}</GridButton>
+          <ColumnButton onClick={handleOpenColumn}>{svgCloumn}</ColumnButton>
+        </div>
         <InputStyled type="search" placeholder="Serch student"></InputStyled>
         <InputStyled type="search" placeholder="Serch student"></InputStyled>
         <InputStyled type="search" placeholder="Serch student"></InputStyled>

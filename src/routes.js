@@ -8,6 +8,8 @@ import ChangePasswordComponent from "./components/auth/changePassword";
 import ProfileComponent from "./components/profile/profile";
 import SidebarComponent from "./components/sidebar/sidebar";
 import LeadsComponent from "./components/leads/leads";
+import TeachersComponent from "./components/teachers/teachers";
+import TeacherProfile from "./components/teachers/teacherProfile";
 
 const RoutesComponent = () => {
   const location = useLocation()
@@ -36,6 +38,9 @@ const RoutesComponent = () => {
           <Route path="/change-password" element={<ChangePasswordComponent />} />
           <Route path="/profile" element={<ProfileComponent />} />
           <Route path="/leads" element={<LeadsComponent />} />
+          <Route path="/teachers" element={<TeachersComponent />} />
+          {/* id */}
+          <Route path="/teachers/:id" element={<TeacherProfile/>}/>
         </Routes>
       </div>
 

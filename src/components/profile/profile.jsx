@@ -1,12 +1,12 @@
 import React from 'react'
-import { ProdileBox, ProfileAvatar, ProfileBG, ProfileContactInfo, ProfileContainer, ProfileInfo, ProfileType } from '../styles/profileStd/profileStyle'
+import { ProfileBox, ProfileAvatar, ProfileBG, ProfileContactInfo, ProfileContainer, ProfileInfo, ProfileType } from '../styles/profileStd/profileStyle'
 import avatar from '../../assets/profileAssets/Avatar.png'
 import ProfileEditModal from './profileEditModal';
 
 const ProfileComponent = () => {
   return (
     <ProfileContainer>
-      <ProdileBox>
+      <ProfileBox>
         <ProfileBG>
          <ProfileAvatar>
           <img src={avatar} alt="avatar" />
@@ -25,7 +25,7 @@ const ProfileComponent = () => {
             <p>010-1234-5678</p>
           </ProfileContactInfo>
         </ProfileInfo>
-      </ProdileBox>
+      </ProfileBox>
     </ProfileContainer>
   )
 }
