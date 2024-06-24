@@ -1,0 +1,82 @@
+export const groupMock = {
+  maindata: [
+    {
+      id: "1",
+      group: {
+        groupName: "Advanced Beginners",
+        course: "Elementary",
+        teacher: "IT Botcamp",
+        days: "Mon, Wed, Fri",
+        room: "Room 2",
+        students: "24 students",
+        startTime: "08:05",
+        endTime: "09:05",
+      },
+    },
+    {
+      id: "2",
+      group: {
+        groupName: "Advanced Beginners",
+        course: "Pre-Intermediate",
+        teacher: "U.Bektum",
+        days: "Tue, Thu",
+        room: "Room 3",
+        students: "18 students",
+        startTime: "10:10",
+        endTime: "11:10",
+      },
+    },
+    {
+      id: "3",
+      group: {
+        groupName: "Pre-Intermediate",
+        course: "Pre-Intermediate",
+        teacher: "Sh. Shoira",
+        days: "Tue, Thu",
+        room: "Room 1",
+        students: "20 students",
+        startTime: "14:00",
+        endTime: "15:00",
+      },
+    },
+    {
+      id: "4",
+      group: {
+        groupName: "Intermediate",
+        course: "Intermediate",
+        teacher: "U.Hamro",
+        days: "Mon, Wed, Fri",
+        room: "Room 4",
+        students: "15 students",
+        startTime: "16:30",
+        endTime: "17:30",
+      },
+    },
+    {
+      id: "5",
+      group: {
+        groupName: "Upper-Intermediate",
+        course: "Upper-Intermediate",
+        teacher: "U.Akbar",
+        days: "Tue, Thu",
+        room: "Room 5",
+        students: "12 students",
+        startTime: "18:45",
+        endTime: "19:45",
+      },
+    },
+    {
+      id: "6",
+      group: {
+        groupName: "Advanced",
+        course: "Advanced",
+        teacher: "U.Nodir",
+        days: "Mon, Wed, Fri",
+        room: "Room 1",
+        students: "10 students",
+        startTime: "20:00",
+        endTime: "21:00",
+      },
+    },
+  ],
+};

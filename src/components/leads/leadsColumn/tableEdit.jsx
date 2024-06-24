@@ -4,8 +4,10 @@ import MenuItem from '@mui/material/MenuItem';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import TableSmsModal from './TableSmsModal';
+import TableAddGroupModal from './tableAddGroupModal';
 
-export default function EditMenu() {
+export default function EditTable() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -24,7 +26,6 @@ export default function EditMenu() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        style={{cursor: "pointer"}}
       >
         <MoreVertIcon sx={{color:"#BFBAE3"}}/>
       </div>
@@ -45,6 +46,10 @@ export default function EditMenu() {
             <DeleteOutlineOutlinedIcon sx={{fontSize: "20px", marginRight: "10px"}}/> 
             Delete
         </MenuItem>
+        {/* //// */}
+        <TableSmsModal onClick={handleClose}/>
+        {/* //// */}
+        <TableAddGroupModal onClick={handleClose}/>
       </Menu>
     </div>
   );

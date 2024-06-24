@@ -16,6 +16,8 @@ import {
 } from "../../styles/leadsStd/leadStyle";
 import EditMenu from "./editMenu";
 import { sectionData } from "../../mock/leadMock/sectionData";
+import LeadInfoModal from "./leadInfoModal";
+import EditTable from "../leadsColumn/tableEdit";
 
 const SubjectAccordition = () => {
   const data = sectionData.maindata
@@ -56,14 +58,15 @@ const SubjectAccordition = () => {
             <SubStudentWrapper>
             <SubStudentLeft>
               <SubStudentAvatar>{value.name[0]}</SubStudentAvatar>
+              {/* {value.name.split(" ")[0][0]}{value.name.split(" ")[1][0]} */}
               <StudentNameAndNumber>
                 <SubStudentName>{value.name}</SubStudentName>
                 <SubStudentNumber>{value.phoneNumber}</SubStudentNumber>
               </StudentNameAndNumber>
             </SubStudentLeft>
             <SubStudentRight>
-              <div>!</div>
-              <EditMenu />
+              <div><LeadInfoModal data={value}/></div>
+              <EditTable />
             </SubStudentRight>
           </SubStudentWrapper>
           )

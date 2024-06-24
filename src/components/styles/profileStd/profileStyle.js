@@ -84,7 +84,7 @@ export const ProfileType = styled.div`
   background: var(--400, #a098d5);
   width: fit-content;
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 
   color: var(--100, #efeef8);
   font-family: Inter;

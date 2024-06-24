@@ -1,6 +1,6 @@
 import React from 'react'
 import { ExitButton, ModalBody, ModalContainer, ModalTitel } from '../../styles/profileStd/profileModalStyle';
-import { InputStyled, InputTitle, InputWrapper, SendButton } from '../../styles/materialsStyle';
+import { AddButtonBlue, InputStyled, InputTitle, InputWrapper, SendButton } from '../../styles/materialsStyle';
 import ClearIcon from '@mui/icons-material/Clear';
 import { Modal } from '@mui/material';
 
@@ -8,11 +8,12 @@ const AddLeadModal = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    
     return (
-      <div>
-        <SendButton  onClick={handleOpen}>
+      <div style={{width: "100%"}}>
+        <AddButtonBlue onClick={handleOpen}>
              + Add Lead
-            </SendButton>
+            </AddButtonBlue>
         <Modal
           open={open}
           onClose={handleClose}

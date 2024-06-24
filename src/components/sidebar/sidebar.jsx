@@ -40,10 +40,12 @@ const SidebarComponent = () => {
             Teachers
           </PageWrapper>
           </Link>
+          <Link to="/groups" style={{textDecoration: "none"}}>
          <PageWrapper>
             <img src={groupsIcon} alt="groupsIcon" />
             Groups
           </PageWrapper>
+          </Link>
          <PageWrapper>
             <img src={studentsIcon} alt="studentsIcon" />
             Students

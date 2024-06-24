@@ -1,22 +1,27 @@
 import React from 'react'
 import { TeachersContainer, TeachersTopFilters } from '../styles/teachersStd/teachersStyle'
-import { InputStyled, SendButton, Table, TableAvatarLetter, TableCell, TableHeader, TableNameAndAvatar, TableOrderNumber, TablePhoneNumber, TableTr } from '../styles/materialsStyle'
+import { InputContainer, InputStyledIcon, SearchIcon, Table, TableAvatarLetter, TableCell, TableHeader, TableNameAndAvatar, TableOrderNumber, TablePhoneNumber, TableTr } from '../styles/materialsStyle'
 import { Link } from 'react-router-dom'
 import { teacherData } from '../mock/teachersMock/teacherInfoMock'
+import AddTeacherModal from './addTeacherModal'
+import seachIcon from "../../assets/leadsAssets/search.svg";
 
 const TeachersComponent = () => {
     const data = teacherData.maindata
   return (
     <TeachersContainer>
         <TeachersTopFilters>
-        <InputStyled $maxWidth318px type="search" placeholder="Serch student"></InputStyled>
-        <SendButton $maxWidhtFitContent>+ Add teacher</SendButton>
+        <InputContainer>
+          <SearchIcon src={seachIcon} alt="icon" />
+          <InputStyledIcon $maxWidth318 type="text" placeholder="Search teacher..." />
+        </InputContainer>
+       <AddTeacherModal/>
         </TeachersTopFilters>
 
         <Table>
             <thead>
                 <tr>
-                    <TableHeader></TableHeader>
+                    <TableHeader $leftBorderRadius></TableHeader>
                     <TableHeader>Full name</TableHeader>
                     <TableHeader>Phone number</TableHeader>
                     <TableHeader>Groups</TableHeader>
@@ -31,7 +36,9 @@ const TeachersComponent = () => {
                           <TableCell><TableOrderNumber $minWidth12px></TableOrderNumber></TableCell>
                           <TableCell>
                               <TableNameAndAvatar>
-                                  <TableAvatarLetter>{value.teacher.fullName[0]}</TableAvatarLetter> 
+                                  <TableAvatarLetter>
+                                    {value.teacher.fullName.split(" ")[0][0]}{value.teacher.fullName.split(" ")[1][0]}
+                                  </TableAvatarLetter>
                                   {value.teacher.fullName}
                               </TableNameAndAvatar>
                           </TableCell>

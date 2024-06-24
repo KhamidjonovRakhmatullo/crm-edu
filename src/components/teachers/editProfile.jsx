@@ -4,8 +4,9 @@ import MenuItem from '@mui/material/MenuItem';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import FilterDramaIcon from "@mui/icons-material/FilterDrama";
 
-export default function EditMenu() {
+export default function EditProfile() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -24,9 +25,8 @@ export default function EditMenu() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        style={{cursor: "pointer"}}
       >
-        <MoreVertIcon sx={{color:"#BFBAE3"}}/>
+        <MoreVertIcon sx={{color:"#2C2669"}}/>
       </div>
       <Menu
         id="basic-menu"
@@ -40,6 +40,10 @@ export default function EditMenu() {
         <MenuItem onClick={handleClose}>
             <BorderColorOutlinedIcon sx={{fontSize: "20px", marginRight: "10px"}}/> 
             Edit
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+            <FilterDramaIcon sx={{fontSize: "20px", marginRight: "10px"}}/> 
+            SMS
         </MenuItem>
         <MenuItem onClick={handleClose}>
             <DeleteOutlineOutlinedIcon sx={{fontSize: "20px", marginRight: "10px"}}/> 

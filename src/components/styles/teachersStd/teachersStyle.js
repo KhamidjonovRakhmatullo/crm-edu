@@ -33,6 +33,8 @@ export const TeacherInfoPages = styled.div`
   padding: 14px 0px;
   background-color: #f0f0f0;
   border: 2px solid #2c2669;
+  border-left: ${(props)=> props.$BorderNoSides ? `unset` : ``};
+  border-right: ${(props)=> props.$BorderNoSides ? `unset` : ``};
   background-color: transparent;
   /* Border radius based on props */
   border-top-left-radius: ${(props) =>

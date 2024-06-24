@@ -6,10 +6,8 @@ export const LeadContainer = styled.div`
 `;
 
 export const LeadTopFilter = styled.div`
-  /* border: 1px solid blue; */
-  /* padding: 20px; */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 14px;
   /* margin-bottom: 40px; */
@@ -17,35 +15,37 @@ export const LeadTopFilter = styled.div`
 `;
 
 export const GridButton = styled.div`
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 6px 0px 0px 6px;
-    border: 1px solid var(--600, #2c2669);
-    background-color: #2c2669;
-    color: white;
-    cursor: pointer;
-    &:hover{
-      background-color: transparent;
-    }
+  padding: 10px 20px;
+  height: 43px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 6px 0px 0px 6px;
+  border: 1px solid var(--600, #2c2669);
+  background-color: #2c2669;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: transparent;
+  }
 `;
 
 export const ColumnButton = styled.div`
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 0px 6px 6px 0px;
-    border: 1px solid var(--600, #2c2669);
-    background-color: #2c2669;
-    color: white;
-    cursor: pointer;
-    &:hover{
-      background-color: transparent;
-    }
+  padding: 10px 20px;
+  height: 43px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 0px 6px 6px 0px;
+  border: 1px solid var(--600, #2c2669);
+  background-color: #2c2669;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: transparent;
+  }
 `;
 
 export const LeadBody = styled.div`
@@ -183,4 +183,24 @@ export const SubjectTextAndEdit = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+`;
+export const SmsTemplates = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--200, #cfcbea);
+  //font
+  color: var(--600, #2c2669);
+  font-family: "Public Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  &:hover{
+    background-color: #EFEEF8;
+    cursor: pointer;
+  }
 `;

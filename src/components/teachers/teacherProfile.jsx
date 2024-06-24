@@ -13,9 +13,10 @@ import {
   ProfileInfo,
   ProfileType,
 } from "../styles/profileStd/profileStyle";
-import EditMenu from "../leads/leadsGrid/editMenu";
 import { teacherData } from "../mock/teachersMock/teacherInfoMock";
 import TeacherGroup from "./teacherGroup";
+import EditProfile from "./editProfile";
+// import TeacherSalary from "./teacherSalary";
 
 const TeacherProfile = () => {
   //data by id
@@ -39,7 +40,7 @@ const TeacherProfile = () => {
         <TeacherInfoPages onClick={handleProfilePage} borderType="left">
           Profile
         </TeacherInfoPages>
-        <TeacherInfoPages onClick={handleGroupsPage}>Groups</TeacherInfoPages>
+        <TeacherInfoPages $BorderNoSides onClick={handleGroupsPage}>Groups</TeacherInfoPages>
         <TeacherInfoPages borderType="right">Salary</TeacherInfoPages>
       </TeachersProfileTopPages>
 
@@ -49,14 +50,17 @@ const TeacherProfile = () => {
         <ProfileBox>
           <ProfileBG>
             <ProfileAvatar>
-              {resultData.photo || resultData.teacher.fullName[0]}
+              {resultData.teacher.photo || resultData.teacher.fullName[0]}
             </ProfileAvatar>
             {/* <ProfileEditModal/> modal has exported */}
-            <EditMenu />
+            <EditProfile />
           </ProfileBG>
           <ProfileInfo>
             {resultData.teacher.fullName}
+            <div style={{display: "flex", gap: "4px"}}>
             <ProfileType>{resultData.teacher.position}</ProfileType>
+            <ProfileType>{resultData.teacher.position}</ProfileType>
+            </div>
             <ProfileContactInfo>
               <span>Branch:</span>
               <p>{resultData.teacher.worksIn}</p>

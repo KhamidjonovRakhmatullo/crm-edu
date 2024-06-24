@@ -10,6 +10,8 @@ import SidebarComponent from "./components/sidebar/sidebar";
 import LeadsComponent from "./components/leads/leads";
 import TeachersComponent from "./components/teachers/teachers";
 import TeacherProfile from "./components/teachers/teacherProfile";
+import GroupsComponent from "./components/groups/groups";
+import GroupProfile from "./components/groups/groupProfile";
 
 const RoutesComponent = () => {
   const location = useLocation()
@@ -39,8 +41,10 @@ const RoutesComponent = () => {
           <Route path="/profile" element={<ProfileComponent />} />
           <Route path="/leads" element={<LeadsComponent />} />
           <Route path="/teachers" element={<TeachersComponent />} />
+          <Route path="/groups" element={<GroupsComponent />} />
           {/* id */}
           <Route path="/teachers/:id" element={<TeacherProfile/>}/>
+          <Route path="/groups/:id" element={<GroupProfile/>}/>
         </Routes>
       </div>
 
