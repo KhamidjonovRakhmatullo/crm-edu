@@ -50,22 +50,25 @@ export const EditProfile = styled.div`
 export const ProfileAvatar = styled.div`
   display: flex;
   justify-content: center;
-    align-items: center;
-  background-color: #EFEEF8;
+  align-items: center;
+  background-color: #efeef8;
   min-width: 88px;
-  min-height: 88px;
+ min-height: 88px;
   margin-top: 70px;
   border-radius: 999px;
   border: 4px solid var(--Color-7, #fff);
   ///font
-  color: var(--600, #2C2669);
+  color: var(--600, #2c2669);
+  img {
+    width: 88px;
+    height: 88px;
+  }
 
-/* Bold/30px -> 40px */
-font-family: "Public Sans";
-font-size: 30px;
-font-style: normal;
-font-weight: 700;
-line-height: 40px; /* 133.333% */
+  font-family: "Public Sans";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; 
 `;
 export const ProfileInfo = styled.div`
   margin: 42px 26px 20px 26px;

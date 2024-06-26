@@ -23,10 +23,7 @@ const GroupsComponent = () => {
   return (
     <TeachersContainer>
       <TeachersTopFilters>
-        <div>a</div>
-        <div>a</div>
-        <div>a</div>
-        <div>a</div>
+        a
         <AddNewGroupModal />
       </TeachersTopFilters>
 
@@ -48,18 +45,18 @@ const GroupsComponent = () => {
               <Link to={`${value.id}`} style={{ display: "contents" }}>
                 <TableTr key={key}>
                   <TableCell>
-                    <TableOrderNumber>{value.group.id}</TableOrderNumber>
+                    <TableOrderNumber>{value.id || "no data"}</TableOrderNumber>
                   </TableCell>
                   <TableCell>
                     <TableNameAndAvatar>
                       <TableAvatarLetter>
                         {value.group.groupName.split(" ")[0][0]}
                       </TableAvatarLetter>
-                      {value.group.groupName}
+                      {value.group.groupName || "no data"}
                     </TableNameAndAvatar>
                   </TableCell>
-                  <TableCell $Color2nd>{value.group.course}</TableCell>
-                  <TableCell> {value.group.teacher}</TableCell>
+                  <TableCell $Color2nd>{value.group.course || "no data"}</TableCell>
+                  <TableCell> {value.group.teacher || "no data"}</TableCell>
                   <TableCell>
                     <div
                       style={{
@@ -68,12 +65,12 @@ const GroupsComponent = () => {
                         gap: "4px",
                       }}
                     >
-                      {value.group.startTime} - {value.group.endTime}
-                      <TableText10px>{value.group.days}</TableText10px>
+                      {value.group.startTime} - {value.group.endTime || "no data"}
+                      <TableText10px>{value.group.days || "no data"}</TableText10px>
                     </div>
                   </TableCell>
-                  <TableCell $TextCenter>{value.group.room}</TableCell>
-                  <TableCell $TextCenter>{value.group.students}</TableCell>
+                  <TableCell $TextCenter>{value.group.room || "no data"}</TableCell>
+                  <TableCell $TextCenter>{value.group.students || "no data"}</TableCell>
                 </TableTr>
               </Link>
             );

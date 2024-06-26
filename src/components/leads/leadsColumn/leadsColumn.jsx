@@ -22,16 +22,16 @@ const LeadsColumn = () => {
                 {data.map((value, key)=> {
                     return(
                         <TableTr key={key}>
-                          <TableCell><TableOrderNumber>{value.id}</TableOrderNumber></TableCell>
+                          <TableCell><TableOrderNumber>{value.id || "!"}</TableOrderNumber></TableCell>
                           <TableCell>
                               <TableNameAndAvatar>
                               <TableAvatarLetter>{value.name.split(" ")[0][0]}{value.name.split(" ")[1][0]}</TableAvatarLetter> 
-                                  {value.name}
+                                  {value.name || "no data"}
                               </TableNameAndAvatar>
                           </TableCell>
-                          <TableCell><TablePhoneNumber>{value.phoneNumber}</TablePhoneNumber></TableCell>
-                          <TableCell>{value.fromWhere}</TableCell>
-                          <TableCell>{value.level}</TableCell>
+                          <TableCell><TablePhoneNumber>{value.phoneNumber || "no data"}</TablePhoneNumber></TableCell>
+                          <TableCell>{value.fromWhere || "no data"}</TableCell>
+                          <TableCell>{value.level || "no data"}</TableCell>
                           <TableCell><EditTable/></TableCell>
                        </TableTr>
                     )

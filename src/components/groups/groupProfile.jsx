@@ -46,15 +46,15 @@ const GroupProfile = () => {
           }}
         >
           <DivSpaceBetween>
-            <TeacherGroupName>{data.group.groupName}</TeacherGroupName>
+            <TeacherGroupName>{data.group.groupName || "no data"}</TeacherGroupName>
             <TeacherGroupLabel>Group name</TeacherGroupLabel>
           </DivSpaceBetween>
           <DivSpaceBetween>
-            <TeacherGroupCourse>{data.group.course}</TeacherGroupCourse>
+            <TeacherGroupCourse>{data.group.course || "no data"}</TeacherGroupCourse>
             <TeacherGroupLabel>Course</TeacherGroupLabel>
           </DivSpaceBetween>
           <DivSpaceBetween>
-            <TeacherGroupStartDate>{data.group.teacher}</TeacherGroupStartDate>
+            <TeacherGroupStartDate>{data.group.teacher || "no data"}</TeacherGroupStartDate>
             <TeacherGroupLabel>Teacher name</TeacherGroupLabel>
           </DivSpaceBetween>
           <DivSpaceBetween>
@@ -65,8 +65,8 @@ const GroupProfile = () => {
           </DivSpaceBetween>
           <DivSpaceBetween>
             <StudentsRoomWrapper>
-              <TeacherGroupRoom>{data.group.students}</TeacherGroupRoom>
-              <TeacherGroupRoom>{data.group.room}</TeacherGroupRoom>
+              <TeacherGroupRoom>{data.group.students || "no data"}</TeacherGroupRoom>
+              <TeacherGroupRoom>{data.group.room || "no data"}</TeacherGroupRoom>
             </StudentsRoomWrapper>
             <TeacherGroupLabel>Students & room</TeacherGroupLabel>
           </DivSpaceBetween>
@@ -81,9 +81,9 @@ const GroupProfile = () => {
         <DivSpaceBetween>
           <TeacherGroupDateWrapper>
             <TeacherGroupName>
-              {data.group.startTime}-{data.group.endTime}
+              {data.group.startTime}-{data.group.endTime || "no data"}
             </TeacherGroupName>
-            <TeacherGroupLessonDays>{data.group.days}</TeacherGroupLessonDays>
+            <TeacherGroupLessonDays>{data.group.days || "no data"}</TeacherGroupLessonDays>
           </TeacherGroupDateWrapper>
           <SendButton $maxWidhtFitContent style={{ padding: "8px 40px" }}>
             199.00$

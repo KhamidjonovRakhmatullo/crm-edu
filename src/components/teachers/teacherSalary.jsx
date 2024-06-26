@@ -52,15 +52,15 @@ const TeacherSalary = () => {
               return (
                 <TableTr key={key}>
                   <TableCell $TextCenter>
-                      {value.income.teacherSalary}, USD
+                      {value.income.teacherSalary || "no data"}, USD
                   </TableCell>
-                  <TableCell $Color2nd $TextCenter>{value.income.group}</TableCell>
-                  <TableCell $Color2nd $TextCenter>{value.income.student}</TableCell>
+                  <TableCell $Color2nd $TextCenter>{value.income.group || "no data"}</TableCell>
+                  <TableCell $Color2nd $TextCenter>{value.income.student || "no data"}</TableCell>
                   <TableCell $Color2nd>
                     <TablePhoneNumber $justifyCenter>
-                      {value.income.attendDate}
+                      {value.income.attendDate || "no data"}
                       <br />
-                      {value.income.paymentDate}
+                      {value.income.paymentDate || "no data"}
                     </TablePhoneNumber>
                   </TableCell>
                 </TableTr>
@@ -84,12 +84,12 @@ const TeacherSalary = () => {
             return (
               <TableTr key={key}>
                 <TableCell $TextCenter>
-                    {value.expense.amount}, USD
+                    {value.expense.amount || "no data"}, USD
                 </TableCell>
-                <TableCell $Color2nd $TextCenter>{value.expense.category}</TableCell>
-                <TableCell $Color2nd $TextCenter>{value.expense.description}</TableCell>
+                <TableCell $Color2nd $TextCenter>{value.expense.category || "no data"}</TableCell>
+                <TableCell $Color2nd $TextCenter>{value.expense.description || "no data"}</TableCell>
                 <TableCell $Color2nd>
-                  <TablePhoneNumber $justifyCenter>{value.expense.date}</TablePhoneNumber>
+                  <TablePhoneNumber $justifyCenter>{value.expense.date || "no data"}</TablePhoneNumber>
                 </TableCell>
               </TableTr>
             );

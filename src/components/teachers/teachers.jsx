@@ -39,12 +39,12 @@ const TeachersComponent = () => {
                                   <TableAvatarLetter>
                                     {value.teacher.fullName.split(" ")[0][0]}{value.teacher.fullName.split(" ")[1][0]}
                                   </TableAvatarLetter>
-                                  {value.teacher.fullName}
+                                  {value.teacher.fullName || "no data"}
                               </TableNameAndAvatar>
                           </TableCell>
-                          <TableCell><TablePhoneNumber>{value.teacher.phoneNumber}</TablePhoneNumber></TableCell>
-                          <TableCell $Color2nd>{value.teacher.groups}</TableCell>
-                          <TableCell $Color2nd>{value.teacher.percent}</TableCell>
+                          <TableCell><TablePhoneNumber>{value.teacher.phoneNumber || "no data"}</TablePhoneNumber></TableCell>
+                          <TableCell $Color2nd>{value.teacher.groups || "no data"}</TableCell>
+                          <TableCell $Color2nd>{value.teacher.percent || "no data"}</TableCell>
                        </TableTr>
                       </Link>
                     )

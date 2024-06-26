@@ -1,4 +1,4 @@
-import profileImg from '../../../assets/profileAssets/Avatar.png'
+// import profileImg from '../../../assets/profileAssets/Avatar.png'
 
 export const teacherData = {
     maindata: [
@@ -6,7 +6,7 @@ export const teacherData = {
             id: 1,
             teacher: {
                 fullName: 'Andrew Smith',
-                photo: profileImg,
+                photo: '',
                 phoneNumber: '01012345678',
                 groups: '0',
                 percent: '40%',
