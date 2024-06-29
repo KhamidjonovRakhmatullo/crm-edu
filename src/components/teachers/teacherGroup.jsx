@@ -23,7 +23,7 @@ const TeacherGroup = () => {
       {data.map((value, key) => {
         return (
           <TeacherGroupBox key={key}>
-            <TeacherGroupAvatar>{value.groupName[0]}</TeacherGroupAvatar>
+            <TeacherGroupAvatar $marginBottom27>{value.groupName[0]}</TeacherGroupAvatar>
             <div style={{display: "flex", flexDirection: "column", alignContent: "center", gap:"12px"}}>
             <DivSpaceBetween>
               <TeacherGroupName>{value.groupName}</TeacherGroupName>

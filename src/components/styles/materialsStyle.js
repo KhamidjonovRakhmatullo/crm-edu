@@ -38,23 +38,23 @@ export const InputStyled = styled.input`
 `;
 
 export const TextAreaStyled = styled.textarea`
-display: flex;
-height: 151px;
-padding: 8px 16px;
-width: 100%;
-align-items: center;
-align-self: stretch;
-border-radius: 8px;
-border: 1px solid var(--200, #CFCBEA);
-background: var(--100, #EFEEF8);
-//font
-color: var(--200, #2C2669);
-font-family: "Public Sans";
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px; /* 133.333% */
-`
+  display: flex;
+  height: 151px;
+  padding: 8px 16px;
+  width: 100%;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid var(--200, #cfcbea);
+  background: var(--100, #efeef8);
+  //font
+  color: var(--200, #2c2669);
+  font-family: "Public Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+`;
 
 /////input with icon
 export const InputContainer = styled.div`
@@ -64,7 +64,7 @@ export const InputContainer = styled.div`
 
 export const InputStyledIcon = styled.input`
   width: 100%;
-  max-width: ${(props)=> props.$maxWidth318 ? `318px` : ``};
+  max-width: ${(props) => (props.$maxWidth318 ? `318px` : ``)};
   padding: 14px 8px 14px 36px;
   height: 44px;
   border: 1px solid var(--300, #bfbae3);
@@ -240,6 +240,17 @@ export const AccorditionWrap = styled.div`
 `;
 
 ///TABLE
+
+export const TableHeadWrapper = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 60px;
+  padding-left: 40px;
+  background-color: #fff;
+  border-top-left-radius: 16px;
+`;
+
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -251,12 +262,12 @@ export const Table = styled.table`
 `;
 
 export const TableHeader = styled.th`
-  border-top-left-radius: ${(props)=> props.$leftBorderRadius ? `16px` : ``};
+  border-top-left-radius: ${(props) => (props.$leftBorderRadius ? `16px` : ``)};
   background-color: #f2f2f2;
   /* padding: 15px 0px; */
   height: 52px;
   text-align: left;
-  text-align: ${(props)=> props.$textCenterTH ? `center`: ``};
+  text-align: ${(props) => (props.$textCenterTH ? `center` : ``)};
   /* border: 1px solid red; */
 
   color: var(--400, #a098d5);
@@ -280,7 +291,7 @@ export const TableCell = styled.td`
   border-bottom: 1px solid #ddd;
   padding: 15px 0px;
   height: 70px;
-  text-align: ${(props)=> props.$TextCenter ? `center`: ``};
+  text-align: ${(props) => (props.$TextCenter ? `center` : ``)};
   //font
   color: var(--600, #2c2669);
   color: ${(props) => (props.$Color2nd ? `#6053B9` : ``)};
@@ -288,7 +299,7 @@ export const TableCell = styled.td`
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
-  font-weight: ${(props) => (props.$Color2nd ? `500` : ``)};
+  font-weight: ${(props) => (props.$Font500 ? `500` : ``)};
   line-height: 16px; /* 114.286% */
 `;
 export const TableOrderNumber = styled.td`
@@ -302,8 +313,9 @@ export const TablePhoneNumber = styled.td`
   color: var(--500, #6053b9);
   display: flex;
   align-items: center;
-  justify-content: ${(props)=> props.$justifyCenter ? `center`: ``};
-  text-align: ${(props)=> props.$TextCenter2 ? `center`: ``};
+  justify-content: ${(props) => (props.$justifyCenter ? `center` : ``)};
+  gap: 8px;
+  text-align: ${(props) => (props.$TextCenter2 ? `center` : ``)};
   /* Medium/14px -> 20px */
   font-family: "Public Sans";
   font-size: 14px;
@@ -327,4 +339,37 @@ export const TableAvatarLetter = styled.td`
   flex-shrink: 0;
   border-radius: 100px;
   background: var(--400, #a098d5);
+`;
+
+export const ActiveBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 12px;
+  max-width: fit-content;
+  border-radius: 4px;
+  background: var(--100, #efeef8);
+  //font
+  color: var(--500, #6053b9);
+  font-family: "Public Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 133.333% */
+`;
+export const PercentageBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 12px;
+  max-width: fit-content;
+  border-radius: 4px;
+  background: var(--500, #6053B9);
+  //font
+  color: var(--100, #fff);
+  font-family: "Public Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 133.333% */
 `;

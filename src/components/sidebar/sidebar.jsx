@@ -46,23 +46,29 @@ const SidebarComponent = () => {
             Groups
           </PageWrapper>
           </Link>
+          <Link to="/students" style={{textDecoration: "none"}}>
          <PageWrapper>
             <img src={studentsIcon} alt="studentsIcon" />
             Students
           </PageWrapper>
+          </Link>
+          <Link to="/budjet" style={{textDecoration: "none"}}>
          <PageWrapper>
             <img src={budgetIcon} alt="budgetIcon" />
             Budget
           </PageWrapper>
+          </Link>
          </div>
 
          <HrLine/>
 
          <div style={{display: "flex", flexDirection: "column", gap: "8px", width: "100%"}}>
+         <Link to="/notifications" style={{textDecoration: "none"}}>
          <PageWrapper>
             <img src={notifIcon} alt="notifIcon" />
             Notifications
           </PageWrapper>
+          </Link>
          <PageWrapper>
             <img src={settingsIcon} alt="settingsIcon" />
             Settings

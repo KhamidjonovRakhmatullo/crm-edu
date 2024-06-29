@@ -12,6 +12,7 @@ import TeachersComponent from "./components/teachers/teachers";
 import TeacherProfile from "./components/teachers/teacherProfile";
 import GroupsComponent from "./components/groups/groups";
 import GroupProfile from "./components/groups/groupProfile";
+import StudentsComponent from "./components/students/students";
 
 const RoutesComponent = () => {
   const location = useLocation()
@@ -42,6 +43,7 @@ const RoutesComponent = () => {
           <Route path="/leads" element={<LeadsComponent />} />
           <Route path="/teachers" element={<TeachersComponent />} />
           <Route path="/groups" element={<GroupsComponent />} />
+          <Route path="/students" element={<StudentsComponent />} />
           {/* id */}
           <Route path="/teachers/:id" element={<TeacherProfile/>}/>
           <Route path="/groups/:id" element={<GroupProfile/>}/>

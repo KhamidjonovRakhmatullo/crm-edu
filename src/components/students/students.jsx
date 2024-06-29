@@ -16,15 +16,15 @@ import { Link } from "react-router-dom";
 // import AddTeacherModal from '../addTeacherModal'
 import { groupMock } from "../mock/groupsMock/groupsTableMock";
 import { TableText10px } from "../styles/groupsStd/groupsStyle";
-import AddNewGroupModal from "./addNewGroupModal";
+import AddNewStudentModal from "./addNewStudentModal";
 
-const GroupsComponent = () => {
+const StudentsComponent = () => {
   const data = groupMock.maindata;
   return (
     <TeachersContainer>
       <TeachersTopFilters>
         a
-        <AddNewGroupModal />
+        <AddNewStudentModal />
       </TeachersTopFilters>
 
       <Table>
@@ -81,4 +81,4 @@ const GroupsComponent = () => {
   );
 };
 
-export default GroupsComponent;
+export default StudentsComponent;

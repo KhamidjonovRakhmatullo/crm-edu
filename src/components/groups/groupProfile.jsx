@@ -18,6 +18,9 @@ import {
 } from "../styles/teachersStd/teachersStyle";
 import { SendButton } from "../styles/materialsStyle";
 import { GroupProfileContainer } from "../styles/groupsStd/groupsStyle";
+import IndividualPrices from "./individualPrices";
+import History from "./history";
+import GroupProfileModal from "./groupProfileModal";
 
 const GroupProfile = () => {
   let { id } = useParams();
@@ -36,7 +39,10 @@ const GroupProfile = () => {
   return (
     <GroupProfileContainer>
       <TeacherGroupBox>
-        <TeacherGroupAvatar>{data.group.groupName[0]}</TeacherGroupAvatar>
+       <DivSpaceBetween style={{marginBottom: "27px"}}>
+       <TeacherGroupAvatar>{data.group.groupName[0]}</TeacherGroupAvatar>
+       <GroupProfileModal />
+       </DivSpaceBetween>
         <div
           style={{
             display: "flex",
@@ -98,7 +104,7 @@ const GroupProfile = () => {
         <TeacherInfoPages $BorderNoSides onClick={handlePricePage}>Individual prices</TeacherInfoPages>
         <TeacherInfoPages borderType="right">History</TeacherInfoPages>
       </TeachersProfileTopPages>
-      {active ? `Attandance` : `Individual prices`}
+      {active ? <History/> : <IndividualPrices/>}
     </GroupProfileContainer>
   );
 };

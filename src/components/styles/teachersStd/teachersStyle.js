@@ -81,7 +81,7 @@ export const TeacherGroupAvatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 27px;
+  margin-bottom: ${(props)=> props.$marginBottom27 ? `27px` : ``};
   width: 58px;
   height: 58px;
   flex-shrink: 0;
@@ -116,7 +116,7 @@ color: var(--600, #2C2669);
 font-family: "Public Sans";
 font-size: 18px;
 font-style: normal;
-font-weight: 500;
+font-weight: 700;
 line-height: 24px; /* 133.333% */
 `;
 export const TeacherGroupCourse = styled.div`
@@ -154,7 +154,7 @@ color: var(--500, #6053B9);
 font-family: "Public Sans";
 font-size: 14px;
 font-style: normal;
-font-weight: 400;
+font-weight: 501;
 line-height: 16px; /* 114.286% */
 `;
 

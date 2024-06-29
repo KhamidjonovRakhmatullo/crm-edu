@@ -41,8 +41,8 @@ const svgGrid = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
     <LeadContainer>
       <LeadTopFilter>
         <div style={{ display: "flex" }}>
-          <GridButton onClick={handleOpenGrid}>{svgGrid}</GridButton>
-          <ColumnButton onClick={handleOpenColumn}>{svgCloumn}</ColumnButton>
+          <GridButton onClick={handleOpenGrid} activeColor={active}>{svgGrid}</GridButton>
+          <ColumnButton onClick={handleOpenColumn} activeColor={active}>{svgCloumn}</ColumnButton>
         </div>
         <InputContainer>
           <SearchIcon src={seachIcon} alt="icon" />
