@@ -9,10 +9,10 @@ import ProfileComponent from "./components/profile/profile";
 import SidebarComponent from "./components/sidebar/sidebar";
 import LeadsComponent from "./components/leads/leads";
 import TeachersComponent from "./components/teachers/teachers";
-import TeacherProfile from "./components/teachers/teacherProfile";
 import GroupsComponent from "./components/groups/groups";
 import GroupProfile from "./components/groups/groupProfile";
 import StudentsComponent from "./components/students/students";
+import TeacherPagesController from "./components/teachers/teacherPagesController";
 
 const RoutesComponent = () => {
   const location = useLocation()
@@ -45,7 +45,7 @@ const RoutesComponent = () => {
           <Route path="/groups" element={<GroupsComponent />} />
           <Route path="/students" element={<StudentsComponent />} />
           {/* id */}
-          <Route path="/teachers/:id" element={<TeacherProfile/>}/>
+          <Route path="/teachers/:id" element={<TeacherPagesController/>}/>
           <Route path="/groups/:id" element={<GroupProfile/>}/>
         </Routes>
       </div>

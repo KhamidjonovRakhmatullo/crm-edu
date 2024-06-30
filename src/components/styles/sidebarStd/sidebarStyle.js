@@ -23,10 +23,11 @@ padding: 10px 12px;
 align-items: center;
 gap: 12px;
 align-self: stretch;
+background-color: ${(props)=> props.activeColor ? ` #EFEEF8` : ``};
+border-radius: 8px;
 
 &:hover{
     background-color: #EFEEF8;
-    border-radius: 8px;
 }
 
 //font

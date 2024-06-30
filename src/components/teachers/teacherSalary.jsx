@@ -15,6 +15,7 @@ import { SalaryMockData } from "../mock/teachersMock/salaryMock";
 const data = SalaryMockData.maindata;
 
 const TeacherSalary = () => {
+  ///////
   const [active, setActive] = useState(true);
 
   const handleOpenIncome = () => {
@@ -26,10 +27,10 @@ const TeacherSalary = () => {
   return (
     <div>
       <TeachersProfileTopPages>
-        <TeacherInfoPages onClick={handleOpenIncome} borderType="left">
+        <TeacherInfoPages onClick={handleOpenIncome} borderType="left" colorActive={active}>
           Income
         </TeacherInfoPages>
-        <TeacherInfoPages onClick={handleOpenExpense} borderType="right">
+        <TeacherInfoPages onClick={handleOpenExpense} borderType="right" colorActive={!active}>
           Expense
         </TeacherInfoPages>
       </TeachersProfileTopPages>

@@ -18,6 +18,7 @@ import {
 } from "../styles/teachersStd/teachersStyle";
 import { SendButton } from "../styles/materialsStyle";
 import { GroupProfileContainer } from "../styles/groupsStd/groupsStyle";
+import Attandance from "./attandance";
 import IndividualPrices from "./individualPrices";
 import History from "./history";
 import GroupProfileModal from "./groupProfileModal";
@@ -27,15 +28,16 @@ const GroupProfile = () => {
   const data = groupMock.maindata.find((value) => value.id === id);
 
   //page change
-  const [active, setActive] = useState(true);
+  const [currentPage, setCurrentPage] = useState('page1');
 
-  const handleAttandancePage = () => {
-    setActive(true);
-  };
-  const handlePricePage = () => {
-    setActive(false);
-  };
-
+  function PageState() {
+    const pages = {
+      page1: <Attandance />,
+      page2: <IndividualPrices />,
+      page3: <History />,
+    };
+    return pages[currentPage];
+  }
   return (
     <GroupProfileContainer>
       <TeacherGroupBox>
@@ -96,15 +98,19 @@ const GroupProfile = () => {
           </SendButton>
         </DivSpaceBetween>
       </TeacherGroupBox>
-
+      {/* //////////PAGES CONTROLLER////////////// */}
       <TeachersProfileTopPages style={{marginTop: "40px"}}>
-        <TeacherInfoPages onClick={handleAttandancePage} borderType="left">
+        <TeacherInfoPages borderType="left" onClick={()=> setCurrentPage("page1")} colorActive={currentPage === "page1"}>
         Attandance
         </TeacherInfoPages>
-        <TeacherInfoPages $BorderNoSides onClick={handlePricePage}>Individual prices</TeacherInfoPages>
-        <TeacherInfoPages borderType="right">History</TeacherInfoPages>
+        <TeacherInfoPages $BorderNoSides onClick={() => setCurrentPage("page2")} colorActive={currentPage === "page2"}>
+          Individual prices
+        </TeacherInfoPages>
+        <TeacherInfoPages borderType="right" onClick={() => setCurrentPage("page3")} colorActive={currentPage === "page3"}>
+          History
+        </TeacherInfoPages>
       </TeachersProfileTopPages>
-      {active ? <History/> : <IndividualPrices/>}
+      { PageState()}
     </GroupProfileContainer>
   );
 };

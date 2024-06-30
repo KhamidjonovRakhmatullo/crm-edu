@@ -11,9 +11,12 @@ import budgetIcon from '../../assets/sidebarAssets/budget-icon.svg'
 import notifIcon from '../../assets/sidebarAssets/notif-icon.svg'
 import settingsIcon from '../../assets/sidebarAssets/settings-icon.svg'
 import avatar from '../../assets/sidebarAssets/Avatar.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const SidebarComponent = () => {
+  ///state color
+  const methodLocation = useLocation()
+  const currentLocation = methodLocation.pathname;
   return (
     <SidebarContainer>
           <ReqDemoButton2 $borderRadius36 $maxWidth $padding>
@@ -29,31 +32,31 @@ const SidebarComponent = () => {
 
          <div style={{display: "flex", flexDirection: "column", gap: "8px", width: "100%",}}>
           <Link to="/leads" style={{textDecoration: "none"}}>
-         <PageWrapper>
+          <PageWrapper activeColor={currentLocation === "/leads"}>
             <img src={leadsIcon} alt="leadsIcon" />
             Leads
           </PageWrapper>
           </Link>
           <Link to="/teachers" style={{textDecoration: "none"}}>
-         <PageWrapper>
+         <PageWrapper activeColor={currentLocation === "/teachers"}>
             <img src={teachersIcon} alt="teachersIcon" />
             Teachers
           </PageWrapper>
           </Link>
           <Link to="/groups" style={{textDecoration: "none"}}>
-         <PageWrapper>
+         <PageWrapper activeColor={currentLocation === "/groups"}>
             <img src={groupsIcon} alt="groupsIcon" />
             Groups
           </PageWrapper>
           </Link>
           <Link to="/students" style={{textDecoration: "none"}}>
-         <PageWrapper>
+         <PageWrapper activeColor={currentLocation === "/students"}>
             <img src={studentsIcon} alt="studentsIcon" />
             Students
           </PageWrapper>
           </Link>
           <Link to="/budjet" style={{textDecoration: "none"}}>
-         <PageWrapper>
+         <PageWrapper activeColor={currentLocation === "/budjet"}>
             <img src={budgetIcon} alt="budgetIcon" />
             Budget
           </PageWrapper>
@@ -64,7 +67,7 @@ const SidebarComponent = () => {
 
          <div style={{display: "flex", flexDirection: "column", gap: "8px", width: "100%"}}>
          <Link to="/notifications" style={{textDecoration: "none"}}>
-         <PageWrapper>
+         <PageWrapper activeColor={currentLocation === "/notifications"}>
             <img src={notifIcon} alt="notifIcon" />
             Notifications
           </PageWrapper>
@@ -77,7 +80,7 @@ const SidebarComponent = () => {
 
        <ProfileWrapperPage>
         <Link to="/profile" style={{textDecoration: "none"}}>
-          <PageWrapper>
+          <PageWrapper activeColor={currentLocation === "/profile"}>
             <img src={avatar} alt="avatar" />
             Adrew Smith
           </PageWrapper>

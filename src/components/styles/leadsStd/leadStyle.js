@@ -24,7 +24,7 @@ export const GridButton = styled.div`
   border-radius: 6px 0px 0px 6px;
   border: 1px solid var(--600, #2c2669);
   background-color: #2c2669;
-  background-color: ${(props)=> props.activeColor ? `transparent` : `#2c2669`};
+  background-color: ${(props)=> props.activeColor ? `#2c2669` : `transparent`};
   color: white;
   cursor: pointer;
 `;
@@ -39,7 +39,7 @@ export const ColumnButton = styled.div`
   border-radius: 0px 6px 6px 0px;
   border: 1px solid var(--600, #2c2669);
   background-color: #2c2669;
-  background-color: ${(props)=> props.activeColor ? `#2c2669` : `transparent`};
+  background-color: ${(props)=> props.activeColor ? `transparent` : `#2c2669`};
   color: white;
   cursor: pointer;
 `;
