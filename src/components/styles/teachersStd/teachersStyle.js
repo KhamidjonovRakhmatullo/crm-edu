@@ -34,6 +34,8 @@ export const TeacherInfoPages = styled.div`
   border: 2px solid #2c2669;
   border-left: ${(props)=> props.$BorderNoSides ? `unset` : ``};
   border-right: ${(props)=> props.$BorderNoSides ? `unset` : ``};
+  border-right: ${(props)=> props.$BorderRightSide ? `2px solid #2c2669` : ``};
+  border-left: ${(props)=> props.$BorderRightSide ? `unset` : ``};
   background-color: transparent;
   background-color: ${(props)=> props.colorActive ? `#2c2669` : `transparent`};
   color: ${(props)=> props.colorActive ? `white` : `#2c2669`};
@@ -116,12 +118,15 @@ export const TeacherGroupName = styled.div`
 color: var(--600, #2C2669);
 font-family: "Public Sans";
 font-size: 18px;
+font-size: ${(props)=> props.$fontSize24 ? `24px` : ``};
 font-style: normal;
 font-weight: 700;
+font-weight: ${(props)=> props.$weight2nd ? `500` : ``};
 line-height: 24px; /* 133.333% */
 `;
 export const TeacherGroupCourse = styled.div`
 color: var(--500, #6053B9);
+color: ${(props)=> props.$color2nd ? `#2C2669` : ``};
 font-family: "Public Sans";
 font-size: 24px;
 font-style: normal;

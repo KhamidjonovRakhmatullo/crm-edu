@@ -56,7 +56,7 @@ const svgGrid = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
           <SearchIcon src={seachIcon} alt="icon" />
           <InputStyledIcon type="text" placeholder="From where" />
         </InputContainer>
-        <ResetButton>
+        <ResetButton $maxWidth>
           <img src={resetIcon} alt="icon" />
           Reset filter
         </ResetButton>

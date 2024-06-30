@@ -22,7 +22,7 @@ const TableAddGroupModal = () => {
   const handleClose = () => setOpen(false);
   return (
     <div style={{ width: "100%" }}>
-          <MenuItem onClick={handleOpen}>
+        <MenuItem onClick={handleOpen}>
             <AddIcon sx={{fontSize: "20px", marginRight: "10px"}}/>
             Add to group
         </MenuItem>

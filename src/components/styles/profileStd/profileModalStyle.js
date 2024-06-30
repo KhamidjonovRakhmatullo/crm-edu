@@ -39,15 +39,3 @@ font-style: normal;
 font-weight: 700;
 line-height: 32px; /* 133.333% */
 `;
-export const fe = styled.div`
-  border: 1px solid red;
-
-`;
-export const ffee = styled.div`
-  border: 1px solid red;
-
-`;
-export const fae = styled.div`
-  border: 1px solid red;
-
-`;

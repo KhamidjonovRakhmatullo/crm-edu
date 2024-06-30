@@ -65,6 +65,7 @@ export const InputContainer = styled.div`
 export const InputStyledIcon = styled.input`
   width: 100%;
   max-width: ${(props) => (props.$maxWidth318 ? `318px` : ``)};
+  max-width: ${(props) => (props.$maxWidth170 ? `170px` : ``)};
   padding: 14px 8px 14px 36px;
   height: 44px;
   border: 1px solid var(--300, #bfbae3);
@@ -100,9 +101,11 @@ export const SearchIcon = styled.img`
 
 export const ResetButton = styled.div`
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
+  width: ${(props)=> props.$maxWidth ? "50%" : ``};
+  width: ${(props)=> props.$maxWidth100px ? "150px" : ``};
   gap: 8px;
   padding: 12px;
   height: 44px;
@@ -120,6 +123,11 @@ export const ResetButton = styled.div`
 `;
 
 ///checkBOX
+export const CheckBoxWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
 export const CheckBoxStyled = styled.input`
   width: 16px;
   height: 16px;
@@ -135,7 +143,7 @@ export const CheckBoxStyled = styled.input`
 `;
 export const CheckBoxLabel = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: ${(props) => (props.$gap8 ? `8px` : ``)};
   //
@@ -257,12 +265,14 @@ export const Table = styled.table`
   /* Add more styles as needed */
   background-color: #fafafb;
   border-top-left-radius: 16px;
+  border-radius: ${(props)=> props.$borderRadius ? `16px` : ``};
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   /* min-width: ; */
 `;
 
 export const TableHeader = styled.th`
   border-top-left-radius: ${(props) => (props.$leftBorderRadius ? `16px` : ``)};
+  border-top-right-radius: ${(props) => (props.$rightBorderRadius ? `16px` : ``)};
   background-color: #f2f2f2;
   /* padding: 15px 0px; */
   height: 52px;
@@ -288,7 +298,7 @@ export const TableTr = styled.tr`
 
 export const TableCell = styled.td`
   /* border: 1px solid blue; */
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
   padding: 15px 0px;
   height: 70px;
   text-align: ${(props) => (props.$TextCenter ? `center` : ``)};
@@ -300,6 +310,7 @@ export const TableCell = styled.td`
   font-style: normal;
   font-weight: 700;
   font-weight: ${(props) => (props.$Font500 ? `500` : ``)};
+  font-weight: ${(props) => (props.$Font400 ? `400` : ``)};
   line-height: 16px; /* 114.286% */
 `;
 export const TableOrderNumber = styled.td`
@@ -308,6 +319,7 @@ export const TableOrderNumber = styled.td`
   align-items: center;
   min-width: 20px;
   min-width: ${(props) => (props.$minWidth12px ? `12px` : ``)};
+  color: ${(props) => (props.$Color2nd ? `#6053B9` : ``)};
 `;
 export const TablePhoneNumber = styled.td`
   color: var(--500, #6053b9);

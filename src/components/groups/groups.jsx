@@ -4,6 +4,10 @@ import {
   TeachersTopFilters,
 } from "../styles/teachersStd/teachersStyle";
 import {
+  InputContainer,
+  InputStyledIcon,
+  ResetButton,
+  SearchIcon,
   Table,
   TableAvatarLetter,
   TableCell,
@@ -17,17 +21,37 @@ import { Link } from "react-router-dom";
 import { groupMock } from "../mock/groupsMock/groupsTableMock";
 import { TableText10px } from "../styles/groupsStd/groupsStyle";
 import AddNewGroupModal from "./addNewGroupModal";
+import seachIcon from "../../assets/leadsAssets/search.svg";
+import resetIcon from "../../assets/leadsAssets/reset.svg";
 
 const GroupsComponent = () => {
   const data = groupMock.maindata;
   return (
     <TeachersContainer>
+    
       <TeachersTopFilters>
-        a
+      <div style={{display: "flex", gap: "6px"}}>
+      <InputContainer>
+          <SearchIcon src={seachIcon} alt="icon" />
+          <InputStyledIcon $maxWidth170 type="text" placeholder="Search teacher..." />
+        </InputContainer>
+        <InputContainer>
+          <SearchIcon src={seachIcon} alt="icon" />
+          <InputStyledIcon $maxWidth170 type="text" placeholder="Search teacher..." />
+        </InputContainer>
+        <InputContainer>
+          <SearchIcon src={seachIcon} alt="icon" />
+          <InputStyledIcon $maxWidth170 type="text" placeholder="Search teacher..." />
+        </InputContainer>
+        <ResetButton>
+          <img src={resetIcon} alt="icon" />
+          Reset filter
+        </ResetButton>
+      </div>
         <AddNewGroupModal />
       </TeachersTopFilters>
 
-      <Table>
+      <Table $borderRadius>
         <thead>
           <tr>
             <TableHeader $leftBorderRadius></TableHeader>
@@ -36,7 +60,7 @@ const GroupsComponent = () => {
             <TableHeader>Teacher</TableHeader>
             <TableHeader>Days</TableHeader>
             <TableHeader $textCenterTH>Room</TableHeader>
-            <TableHeader $textCenterTH>Students</TableHeader>
+            <TableHeader $textCenterTH $rightBorderRadius>Students</TableHeader>
           </tr>
         </thead>
         <tbody>

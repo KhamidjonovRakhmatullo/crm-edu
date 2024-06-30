@@ -7,6 +7,8 @@ import {
 } from "../styles/profileStd/profileModalStyle";
 import {
     AddButtonBlue,
+  CheckBoxLabel,
+  CheckBoxStyled,
   InputStyled,
   InputTitle,
   InputWrapper,
@@ -30,7 +32,7 @@ const AddNewStudentModal = () => {
             <ClearIcon onClick={handleClose} style={{ marginRight: "15px" }} />
           </ExitButton>
           <ModalBody>
-            <ModalTitel>Create new group</ModalTitel>
+            <ModalTitel>Add new student</ModalTitel>
             <InputWrapper>
               <InputTitle>Full name</InputTitle>
               <InputStyled
@@ -48,11 +50,46 @@ const AddNewStudentModal = () => {
               />
             </InputWrapper>
             <InputWrapper>
-              <InputTitle>Select lesson start time</InputTitle>
+              <InputTitle>Gender</InputTitle>
+              <div style={{display: "flex", gap: "40px"}}>
+              <CheckBoxLabel $gap8>
+              <CheckBoxStyled
+                type="radio"
+                name="gender"
+              />
+              Male
+              </CheckBoxLabel>
+              <CheckBoxLabel $gap8>
+              <CheckBoxStyled
+                type="radio"
+                name="gender"
+              />
+              Female
+              </CheckBoxLabel>
+              </div>
+            </InputWrapper>
+            <InputWrapper>
+              <InputTitle>Phone number</InputTitle>
               <InputStyled
-                type="text"
-                placeholder="Start times..."
-                name="last-name"
+                type="number"
+                placeholder="010-0110-1001"
+                name="phone-number"
+              />
+            </InputWrapper>
+            <InputWrapper>
+              <InputTitle>Parent phone number</InputTitle>
+              <InputStyled
+                type="number"
+                placeholder="010-0110-1001"
+                name="phone-number-parent"
+              />
+            </InputWrapper>
+            <InputWrapper>
+              <InputTitle>Password</InputTitle>
+              <InputStyled
+                type="password"
+                placeholder="Enter password"
+                name="password"
               />
             </InputWrapper>
             <WrapperSpaceBetween $gap30px>
@@ -61,38 +98,19 @@ const AddNewStudentModal = () => {
               <InputStyled
                 type="text"
                 placeholder="Select days"
-                name="last-name"
+                name="days"
               />
             </InputWrapper>
             <InputWrapper>
-              <InputTitle>Select room</InputTitle>
-              <InputStyled
-                type="text"
-                placeholder="Select room"
-                name="last-name"
-              />
-            </InputWrapper>
-            </WrapperSpaceBetween>
-            <WrapperSpaceBetween $gap30px>
-            <InputWrapper>
-              <InputTitle>Select start date</InputTitle>
+              <InputTitle>Date from</InputTitle>
               <InputStyled
                 type="date"
-                placeholder="Select date"
-                name="last-name"
-              />
-            </InputWrapper>
-            <InputWrapper>
-              <InputTitle>Select end date</InputTitle>
-              <InputStyled
-                type="date"
-                placeholder="Select date"
-                name="last-name"
+                name="date"
               />
             </InputWrapper>
             </WrapperSpaceBetween>
 
-            <SendButton>Create from where</SendButton>
+            <SendButton>Add student</SendButton>
           </ModalBody>
         </ModalContainer>
       </Modal>

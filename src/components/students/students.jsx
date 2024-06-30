@@ -4,79 +4,96 @@ import {
   TeachersTopFilters,
 } from "../styles/teachersStd/teachersStyle";
 import {
+  InputContainer,
+  InputStyledIcon,
+  SearchIcon,
   Table,
   TableAvatarLetter,
   TableCell,
   TableHeader,
   TableNameAndAvatar,
   TableOrderNumber,
+  TablePhoneNumber,
   TableTr,
 } from "../styles/materialsStyle";
 import { Link } from "react-router-dom";
-// import AddTeacherModal from '../addTeacherModal'
-import { groupMock } from "../mock/groupsMock/groupsTableMock";
-import { TableText10px } from "../styles/groupsStd/groupsStyle";
 import AddNewStudentModal from "./addNewStudentModal";
+import { GroupsBg } from "../styles/studentsStd/studentsStyle";
+import EditTable from "./tableEdit/tableEdit";
+import seachIcon from "../../assets/leadsAssets/search.svg";
+import { studentsMock } from "../mock/studentsMock/studentsMock";
+// import resetIcon from "../../assets/leadsAssets/reset.svg";
 
 const StudentsComponent = () => {
-  const data = groupMock.maindata;
+  const data = studentsMock.maindata;
   return (
     <TeachersContainer>
       <TeachersTopFilters>
-        c
+      <InputContainer>
+          <SearchIcon src={seachIcon} alt="icon" />
+          <InputStyledIcon $maxWidth318 type="text" placeholder="Search teacher..." />
+      </InputContainer>
+        {/* <ResetButton $maxWidth100px>
+          <img src={resetIcon} alt="icon" />
+          Reset filter
+        </ResetButton> */}
         <AddNewStudentModal />
       </TeachersTopFilters>
+      
 
-      <Table>
+      <Table $borderRadius>
         <thead>
           <tr>
             <TableHeader $leftBorderRadius></TableHeader>
-            <TableHeader>Group name</TableHeader>
-            <TableHeader>Course</TableHeader>
-            <TableHeader>Teacher</TableHeader>
-            <TableHeader>Days</TableHeader>
-            <TableHeader $textCenterTH>Room</TableHeader>
-            <TableHeader $textCenterTH>Students</TableHeader>
+            <TableHeader>Full name</TableHeader>
+            <TableHeader>Phone Number</TableHeader>
+            <TableHeader>Groups</TableHeader>
+            <TableHeader>Courses</TableHeader>
+            <TableHeader>Teachers</TableHeader>
+            <TableHeader $rightBorderRadius></TableHeader>
           </tr>
         </thead>
         <tbody>
           {data.map((value, key) => {
             return (
-              <Link to={`${value.id}`} style={{ display: "contents" }}>
                 <TableTr key={key}>
+                   <Link to={`${value.id}`} style={{ display: "contents" }}>
                   <TableCell>
                     <TableOrderNumber>{value.id || "no data"}</TableOrderNumber>
                   </TableCell>
                   <TableCell>
                     <TableNameAndAvatar>
                       <TableAvatarLetter>
-                        {value.group.groupName.split(" ")[0][0]}
+                        {value.table.fullName.split(" ")[0][0]}
                       </TableAvatarLetter>
-                      {value.group.groupName || "no data"}
+                      {value.table.fullName || "no data"}
                     </TableNameAndAvatar>
                   </TableCell>
-                  <TableCell $Color2nd $Font500>{value.group.course || "no data"}</TableCell>
-                  <TableCell> {value.group.teacher || "no data"}</TableCell>
-                  <TableCell>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "4px",
-                      }}
-                    >
-                      {value.group.startTime} - {value.group.endTime || "no data"}
-                      <TableText10px>{value.group.days || "no data"}</TableText10px>
-                    </div>
-                  </TableCell>
-                  <TableCell $TextCenter>{value.group.room || "no data"}</TableCell>
-                  <TableCell $TextCenter>{value.group.students || "no data"}</TableCell>
+                  <TableCell><TablePhoneNumber>{value.table.phoneNumber}</TablePhoneNumber></TableCell>
+                  <TableCell><GroupsBg>{value.table.group}</GroupsBg></TableCell>
+                  <TableCell $Color2nd $Font500> {value.table.course}</TableCell>
+                  <TableCell>{value.table.teacher || "no data"}</TableCell>
+                  </Link>
+                  <TableCell><EditTable/></TableCell>
                 </TableTr>
-              </Link>
             );
           })}
         </tbody>
       </Table>
+
+      <div style={{ border :"0px solid red", display: "flex", justifyContent: "end", alignItems: 'center', gap :"20px", marginTop: "20px"}}> 
+      
+      <select name="" id="" style={{
+        border: "1px solid #2C2669", 
+        padding: '10px 10px', 
+        backgroundColor: "transparent", 
+        borderRadius: "6px"
+        }}>
+        <option value="adw">25 per page</option>
+        <option value="adw">30 per page</option>
+        <option value="adw">40 per page</option>
+      </select>
+      </div>
     </TeachersContainer>
   );
 };
