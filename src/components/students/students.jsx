@@ -23,7 +23,7 @@ const StudentsComponent = () => {
   return (
     <TeachersContainer>
       <TeachersTopFilters>
-        b
+        c
         <AddNewStudentModal />
       </TeachersTopFilters>
 
