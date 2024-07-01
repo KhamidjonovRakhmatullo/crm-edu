@@ -14,6 +14,7 @@ import GroupProfile from "./components/groups/groupProfile";
 import StudentsComponent from "./components/students/students";
 import TeacherPagesController from "./components/teachers/teacherPagesController";
 import StudentsProfile from "./components/students/studentsProfile";
+import BudgetComponent from "./components/budjet/budget";
 
 const RoutesComponent = () => {
   const location = useLocation()
@@ -45,6 +46,7 @@ const RoutesComponent = () => {
           <Route path="/teachers" element={<TeachersComponent />} />
           <Route path="/groups" element={<GroupsComponent />} />
           <Route path="/students" element={<StudentsComponent />} />
+          <Route path="/budjet" element={<BudgetComponent />} />
           {/* id */}
           <Route path="/teachers/:id" element={<TeacherPagesController/>}/>
           <Route path="/groups/:id" element={<GroupProfile/>}/>

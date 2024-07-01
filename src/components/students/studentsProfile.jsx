@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { studentsMock } from "../mock/studentsMock/studentsMock";
 import {
@@ -17,6 +16,7 @@ import {
 } from "../styles/studentsStd/studentsStyle";
 import GroupProfileModal from "../groups/groupProfileModal";
 import TabsController from "./tabs/tabsController";
+// import AddNewStudentModal from "./addNewStudentModal";
 
 const StudentsProfile = () => {
   let { id } = useParams();

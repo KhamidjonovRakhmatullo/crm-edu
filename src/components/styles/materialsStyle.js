@@ -104,8 +104,8 @@ export const ResetButton = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  width: ${(props)=> props.$maxWidth ? "50%" : ``};
-  width: ${(props)=> props.$maxWidth100px ? "150px" : ``};
+  width: ${(props) => (props.$maxWidth ? "50%" : ``)};
+  width: ${(props) => (props.$maxWidth100px ? "150px" : ``)};
   gap: 8px;
   padding: 12px;
   height: 44px;
@@ -265,14 +265,15 @@ export const Table = styled.table`
   /* Add more styles as needed */
   background-color: #fafafb;
   border-top-left-radius: 16px;
-  border-radius: ${(props)=> props.$borderRadius ? `16px` : ``};
+  border-radius: ${(props) => (props.$borderRadius ? `16px` : ``)};
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   /* min-width: ; */
 `;
 
 export const TableHeader = styled.th`
   border-top-left-radius: ${(props) => (props.$leftBorderRadius ? `16px` : ``)};
-  border-top-right-radius: ${(props) => (props.$rightBorderRadius ? `16px` : ``)};
+  border-top-right-radius: ${(props) =>
+    props.$rightBorderRadius ? `16px` : ``};
   background-color: #f2f2f2;
   /* padding: 15px 0px; */
   height: 52px;
@@ -312,6 +313,14 @@ export const TableCell = styled.td`
   font-weight: ${(props) => (props.$Font500 ? `500` : ``)};
   font-weight: ${(props) => (props.$Font400 ? `400` : ``)};
   line-height: 16px; /* 114.286% */
+  span {
+    color: var(--500, #6053b9);
+    font-family: "Public Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+  }
 `;
 export const TableOrderNumber = styled.td`
   display: flex;
@@ -352,6 +361,17 @@ export const TableAvatarLetter = styled.td`
   border-radius: 100px;
   background: var(--400, #a098d5);
 `;
+export const TableEditButton = styled.td`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--600, #2c2669);
+  border: ${(props)=> props.$colorRed ? `1px solid #FF2E00` : ``};
+  cursor: pointer;
+`;
 
 export const ActiveBox = styled.div`
   display: flex;
@@ -376,7 +396,7 @@ export const PercentageBox = styled.div`
   padding: 4px 12px;
   max-width: fit-content;
   border-radius: 4px;
-  background: var(--500, #6053B9);
+  background: var(--500, #6053b9);
   //font
   color: var(--100, #fff);
   font-family: "Public Sans";

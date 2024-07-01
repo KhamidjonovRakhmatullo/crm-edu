@@ -22,6 +22,8 @@ export const TeachersProfileTopPages = styled.div`
   justify-content: start;
   align-items: center;
   margin-bottom: 40px;
+  margin-bottom: ${(props)=> props.$marginBottom0 ? `0px` : ``};
+  width: ${(props)=> props.$width100 ? `100%` : ``};
 `;
 
 export const TeacherInfoPages = styled.div`
