@@ -100,4 +100,5 @@ width: 100%;
 background-color:  #BFBAE3;
 height: 2px;
 margin-top: 24px;
+margin-top: ${(props)=> props.$noMargin ? `0px` : ``};
 `

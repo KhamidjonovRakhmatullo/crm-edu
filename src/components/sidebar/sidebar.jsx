@@ -1,5 +1,5 @@
-import React from 'react'
-import { PageWrapper, ProfileWrapperPage, SidebarContainer } from '../styles/sidebarStd/sidebarStyle'
+import React, { useState } from 'react'
+import { AccorIcon, AccordionContent, AccordionHeader, AccordionWrapper, PageWrapper, ProfileWrapperPage, SidebarContainer } from '../styles/sidebarStd/sidebarStyle'
 import { ReqDemoButton2 } from '../styles/homeStd/reqDemoStyle'
 import { HrLine } from '../styles/materialsStyle'
 import locationIcon from '../../assets/sidebarAssets/location-icon.svg'
@@ -12,11 +12,23 @@ import notifIcon from '../../assets/sidebarAssets/notif-icon.svg'
 import settingsIcon from '../../assets/sidebarAssets/settings-icon.svg'
 import avatar from '../../assets/sidebarAssets/Avatar.png'
 import { Link, useLocation } from 'react-router-dom'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const SidebarComponent = () => {
   ///state color
   const methodLocation = useLocation()
   const currentLocation = methodLocation.pathname;
+
+  ///accordition
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeAccordition = () => {
+    setIsOpen(false)
+  }
   return (
     <SidebarContainer>
           <ReqDemoButton2 $borderRadius36 $maxWidth $padding>
@@ -72,10 +84,33 @@ const SidebarComponent = () => {
             Notifications
           </PageWrapper>
           </Link>
-         <PageWrapper>
-            <img src={settingsIcon} alt="settingsIcon" />
-            Settings
-          </PageWrapper>
+          <AccordionWrapper>
+             <AccordionHeader onClick={toggleAccordion} 
+              setColor={currentLocation === "/office" ||
+                        currentLocation === "/CEO" ||
+                        currentLocation === "/archive"}>
+                 <div>
+                    <img src={settingsIcon} alt="settingsIcon" />
+                     Settings
+                 </div>
+                 <AccorIcon rotateIcon={isOpen}><KeyboardArrowDownIcon/></AccorIcon>
+             </AccordionHeader>
+             <Link to="/office" style={{textDecoration: "none"}}>
+             <AccordionContent isOpen={isOpen} setColor2={currentLocation === "/office"} onClick={closeAccordition}>
+                <div>Office</div>
+             </AccordionContent>
+             </Link>
+             <Link to="/CEO" style={{textDecoration: "none"}}>
+             <AccordionContent isOpen={isOpen} setColor2={currentLocation === "/CEO"} onClick={closeAccordition}>
+                <div>CEO</div>
+             </AccordionContent>
+             </Link>
+             <Link to="/archive" style={{textDecoration: "none"}}>
+             <AccordionContent isOpen={isOpen} setColor2={currentLocation === "/archive"} onClick={closeAccordition}>
+                <div>Archive</div>
+             </AccordionContent>
+             </Link>
+        </AccordionWrapper>
          </div>
 
        <ProfileWrapperPage>

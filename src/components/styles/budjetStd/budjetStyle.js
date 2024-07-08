@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const BudjetContainer = styled.div`
-border: 1px solid red;
 padding: 40px;
 `
 export const BudjetTitle = styled.div`

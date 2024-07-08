@@ -27,7 +27,7 @@ export const ModalBody = styled.div`
   padding: 40px 60px 60px 60px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
 
 `;
 
