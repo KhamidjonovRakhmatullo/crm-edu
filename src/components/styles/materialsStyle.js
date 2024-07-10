@@ -40,6 +40,7 @@ export const InputStyled = styled.input`
 export const TextAreaStyled = styled.textarea`
   display: flex;
   height: 151px;
+  height: ${(props)=> props.$height100 ? `100px` : ``};
   padding: 8px 16px;
   width: 100%;
   align-items: center;

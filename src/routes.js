@@ -16,6 +16,8 @@ import TeacherPagesController from "./components/teachers/teacherPagesController
 import StudentsProfile from "./components/students/studentsProfile";
 import BudgetComponent from "./components/budjet/budget";
 import NotificationsComponent from "./components/notifications/notifications";
+import OfficeComponent from "./components/settings/office/office";
+import CoursesById from "./components/settings/office/coursesById";
 
 const RoutesComponent = () => {
   const location = useLocation()
@@ -49,10 +51,12 @@ const RoutesComponent = () => {
           <Route path="/students" element={<StudentsComponent />} />
           <Route path="/budjet" element={<BudgetComponent />} />
           <Route path="/notifications" element={<NotificationsComponent />} />
+          <Route path="/office" element={<OfficeComponent />} />
           {/* id */}
           <Route path="/teachers/:id" element={<TeacherPagesController/>}/>
           <Route path="/groups/:id" element={<GroupProfile/>}/>
           <Route path="/students/:id" element={<StudentsProfile/>}/>
+          <Route path="/course/:id" element={<CoursesById/>}/>
         </Routes>
       </div>
 
