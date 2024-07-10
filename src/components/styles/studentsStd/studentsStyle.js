@@ -8,13 +8,13 @@ export const GroupsBg = styled.div`
   max-width: fit-content;
   /* gap: 10px; */
   border-radius: 4px;
-  background: var(--100, #efeef8);
+  background: ${(props) => props.$bgBlue ? `#2C2669` : `#efeef8`};
   ///font
-  color: var(--500, #6053b9);
+  color: ${(props)=> props.$colorWhite ? `#fff` : `#6053b9`};
   font-family: "Public Sans";
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: ${(props)=> props.$font700 ? `700` : `400`};
   line-height: 16px; /* 114.286% */
 `;
 
