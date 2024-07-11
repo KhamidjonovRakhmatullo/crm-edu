@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-/* border: 2px solid red; */
-/* height: 100%; */
+  /* border: 2px solid red;
+  height: 100%;
+  overflow: scroll; */
   background-color: white;
   position: absolute;
   top: 50%;

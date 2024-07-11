@@ -19,6 +19,7 @@ import NotificationsComponent from "./components/notifications/notifications";
 import OfficeComponent from "./components/settings/office/office";
 import CoursesById from "./components/settings/office/coursesById";
 import CeoComponent from "./components/settings/ceo/ceo";
+import ArchiveComponent from "./components/settings/archive/archive";
 
 const RoutesComponent = () => {
   const location = useLocation()
@@ -54,6 +55,7 @@ const RoutesComponent = () => {
           <Route path="/notifications" element={<NotificationsComponent />} />
           <Route path="/office" element={<OfficeComponent />} />
           <Route path="/ceo" element={<CeoComponent />} />
+          <Route path="/archive" element={<ArchiveComponent />} />
           {/* id */}
           <Route path="/teachers/:id" element={<TeacherPagesController/>}/>
           <Route path="/groups/:id" element={<GroupProfile/>}/>

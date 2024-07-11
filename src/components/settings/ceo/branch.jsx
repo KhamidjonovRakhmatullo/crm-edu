@@ -1,7 +1,6 @@
 import React from 'react'
 import { Table, TableCell, TableEditButton, TableHeader, TableOrderNumber } from "../../styles/materialsStyle";
 import edit from '../../../assets/budjetAssets/pencil.svg';
-import deleteIcon from '../../../assets/budjetAssets/trash.svg';
 import { GroupsBg } from '../../styles/studentsStd/studentsStyle';
 
 
@@ -28,8 +27,8 @@ const Branch = () => {
                         <TableEditButton>
                             <img src={edit} alt="icon" />
                         </TableEditButton>
-                        <TableEditButton $colorRed>
-                            <img src={deleteIcon} alt="icon" />
+                        <TableEditButton>
+                            | |
                         </TableEditButton>
                     </div>
                 </TableCell>
