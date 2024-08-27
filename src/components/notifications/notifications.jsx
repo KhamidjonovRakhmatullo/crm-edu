@@ -82,7 +82,7 @@ const NotificationsComponent = () => {
             })}
         </NotifLeft>
         <NotifRight>
-          <NotifTextTitle>Lorem ipsum dolor sit amet.</NotifTextTitle>
+          <NotifTextTitle>Lorem ipsum dolor sit amet</NotifTextTitle>
           <NotifText>
           {PageState()}
           </NotifText>
