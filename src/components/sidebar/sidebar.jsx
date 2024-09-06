@@ -21,18 +21,17 @@ const SidebarComponent = () => {
 
   ///accordition
   const [isOpen, setIsOpen] = useState(false);
-
+  ///
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
-
   const closeAccordition = () => {
     setIsOpen(false)
   }
   return (
     <SidebarContainer>
           <ReqDemoButton2 $borderRadius36 $maxWidth $padding>
-            Logotype
+            EduManSim
           </ReqDemoButton2>
         
           <PageWrapper>
@@ -84,7 +83,7 @@ const SidebarComponent = () => {
             Notifications
           </PageWrapper>
           </Link>
-          <AccordionWrapper>
+         <AccordionWrapper>
              <AccordionHeader onClick={toggleAccordion} 
               setColor={currentLocation === "/office" ||
                         currentLocation === "/CEO" ||

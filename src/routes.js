@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import ReqDemoComponent from "./components/home/reqDemo";
+import Register from "./components/auth/register";
 import HomeComponent from "./components/home/home";
 import LoginComponent from "./components/auth/login";
 import ForgotPasswordComponent from "./components/auth/forgotPassword";
@@ -24,8 +24,8 @@ import ArchiveComponent from "./components/settings/archive/archive";
 const RoutesComponent = () => {
   const location = useLocation()
   const hideComponent = location.pathname !=="/" && 
-  location.pathname !== "/request-demo"&&
-  location.pathname !== "/auth"&&
+  location.pathname !== "/register"&&
+  location.pathname !== "/login"&&
   location.pathname !== "/forgot-password"&& 
   location.pathname !== "/change-password"; 
   return (
@@ -42,8 +42,8 @@ const RoutesComponent = () => {
         }}>
         <Routes>
           <Route path="/" element={<HomeComponent />} />
-          <Route path="/request-demo" element={<ReqDemoComponent />} />
-          <Route path="/auth" element={<LoginComponent />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<LoginComponent />} />
           <Route path="/forgot-password" element={<ForgotPasswordComponent />} />
           <Route path="/change-password" element={<ChangePasswordComponent />} />
           <Route path="/profile" element={<ProfileComponent />} />

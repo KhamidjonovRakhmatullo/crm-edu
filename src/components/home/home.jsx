@@ -24,7 +24,7 @@ const HomeComponent = () => {
             <img src={LangIcon} alt="language icon" />
             ENG
           </LanguageButton>
-          <Link to="/auth" style={{textDecoration: "none"}}>
+          <Link to="/login" style={{textDecoration: "none"}}>
           <LogInButton>LOG IN</LogInButton>
           </Link>
         </HomeNavbarRight>
@@ -35,7 +35,7 @@ const HomeComponent = () => {
           A simple management system <br />
           for education
         </h1>
-        <Link to="/request-demo">
+        <Link to="/register">
           <ReqDemoButton>Request a demo</ReqDemoButton>
         </Link>
       </HomeBody>

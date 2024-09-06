@@ -19,7 +19,7 @@ export const ReqDemoBody = styled.div`
 `;
 
 //LEFT
-export const ReqDemoLeft = styled.div`
+export const ReqDemoLeft = styled.form`
   /* border: 1px solid green; */
   /* flex: 1; */
   display: flex;

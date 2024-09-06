@@ -53,7 +53,7 @@ const ForgotPasswordComponent = () => {
         <SendButton>Send</SendButton>
         </Link>
         <hr style={{width: "100%", color: "#2C2669"}}/>
-        <Link to="/auth" style={{textDecoration: "none",}}>
+        <Link to="/login" style={{textDecoration: "none",}}>
           <InputTitle>
             <span style={{ color: "#2C2669", display: "flex", alignItems: "center" }}><ChevronLeftIcon/> Back</span> 
           </InputTitle>

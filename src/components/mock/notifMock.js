@@ -10,7 +10,7 @@ const notifMock = {
       },
       text: {
         title: "Message Title",
-        message: "This is a sample message.",
+        message: "This is a sample message. 111",
       },
     },
     {
@@ -23,7 +23,7 @@ const notifMock = {
       },
       text: {
         title: "Message Title",
-        message: "This is a sample message.",
+        message: "This is a sample message. 3333",
       },
     },
     {
@@ -35,8 +35,8 @@ const notifMock = {
         HaveSeen: "3249",
       },
       text: {
-        title: "Message Title",
-        message: "This is a sample message.",
+        title: "Message Title 3",
+        message: "This is a sample message. 3333",
       },
     },
   ],

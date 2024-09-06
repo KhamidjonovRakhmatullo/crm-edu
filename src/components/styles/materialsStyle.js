@@ -157,7 +157,7 @@ export const CheckBoxLabel = styled.div`
 `;
 
 //SEND BUTTON
-export const SendButton = styled.div`
+export const SendButton = styled.button`
   display: flex;
   width: 100%;
   max-width: ${(props) => (props.$maxWidhtFitContent ? `fit-content` : ``)};

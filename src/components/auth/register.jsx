@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   DemoContactIconWrapper,
   LoginButton,
@@ -21,6 +21,8 @@ import {
 } from "../styles/homeStd/homeStyle";
 import LangIcon from "../../assets/homeAssets/language.svg";
 import {
+  CheckBoxLabel,
+  CheckBoxStyled,
   InputStyled,
   InputTitle,
   InputWrapper,
@@ -28,9 +30,50 @@ import {
 } from "../styles/materialsStyle";
 import phoneIcon from "../../assets/homeAssets/phone-icon.svg";
 import messageIcon from "../../assets/homeAssets/message-icon.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios'
+import { BaseURL } from "../../config/dataUri";
 
-const ReqDemoComponent = () => {
+const Register = () => {
+
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("")
+  const [surname, setSurName] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [email, setEmail] = useState("")
+  const [companyName, setCompanyName] = useState("")
+  const [password, setPassword] = useState("")
+  const [role, setRole] = useState("")
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post(BaseURL + "/auth/register", {
+        name,
+        surname,
+        phone_number: phoneNumber,
+        email,
+        company_name: companyName,
+        role,
+        password
+      });
+      console.log(response.data);
+      navigate("/profile");
+    } catch (error) {
+      console.error("Create account is NOT success!", error);
+    }
+  };
+
+  const handleDemoValue = ()=> {
+    setName("Test Name");
+    setSurName("Test SurName");
+    setPhoneNumber("01044440033");
+    setEmail("test@mail.com");
+    setCompanyName("RRR Academy");
+    setPassword("112233")
+  }
   return (
     <ReqDemoContainer>
       <HomeNavbar>
@@ -48,14 +91,18 @@ const ReqDemoComponent = () => {
       </HomeNavbar>
 
       <ReqDemoBody>
-        <ReqDemoLeft>
+        <button onClick={handleDemoValue}>DEMO</button>
+        <ReqDemoLeft onSubmit={handleSubmit}>
           <ReqDemoTitle>Fill out an aplication</ReqDemoTitle>
+          {/* <form > */}
           <InputWrapper>
             <InputTitle>Name</InputTitle>
             <InputStyled
               type="text"
               placeholder="Enter name"
               name="user-name"
+              onChange={(e)=> setName(e.target.value)}
+              value={name}
             />
           </InputWrapper>
           <InputWrapper>
@@ -64,6 +111,8 @@ const ReqDemoComponent = () => {
               type="text"
               placeholder="Enter surname"
               name="user-surname"
+              onChange={(e)=> setSurName(e.target.value)}
+              value={surname}
             />
           </InputWrapper>
           <InputWrapper>
@@ -72,6 +121,8 @@ const ReqDemoComponent = () => {
               type="number"
               placeholder="Enter phone number"
               name="user-phone-number"
+              onChange={(e)=> setPhoneNumber(e.target.value)}
+              value={phoneNumber}
             />
           </InputWrapper>
           <InputWrapper>
@@ -80,6 +131,8 @@ const ReqDemoComponent = () => {
               type="text"
               placeholder="Enter email"
               name="user-email"
+              onChange={(e)=> setEmail(e.target.value)}
+              value={email}
             />
           </InputWrapper>
           <InputWrapper>
@@ -88,15 +141,60 @@ const ReqDemoComponent = () => {
               type="text"
               placeholder="Enter company name"
               name="user-company-name"
+              onChange={(e)=> setCompanyName(e.target.value)}
+              value={companyName}
             />
           </InputWrapper>
-          <Link to="/profile">
+          <div style={{display: "flex",justifyContent: "start", width: "100%",gap: "20px"}}>
+              <CheckBoxLabel $gap8>
+              <CheckBoxStyled
+                type="radio"
+                name="role"
+                value="Teacher"
+                onChange={(e)=> setRole(e.target.value)}
+                checked={role === "Teacher"}
+              />
+              Teacher
+              </CheckBoxLabel>
+              <CheckBoxLabel $gap8>
+              <CheckBoxStyled
+                type="radio"
+                name="role"
+                value="Student"
+                onChange={(e)=> setRole(e.target.value)}
+                checked={role === "Student"}
+              />
+              Student
+              </CheckBoxLabel>
+              <CheckBoxLabel $gap8>
+              <CheckBoxStyled
+                type="radio"
+                name="role"
+                value="Admin"
+                onChange={(e)=> setRole(e.target.value)}
+                checked={role === "Admin"}
+              />
+              Admin
+              </CheckBoxLabel>
+              </div>
+          <InputWrapper>
+            <InputTitle>Create Password</InputTitle>
+            <InputStyled
+              type="password"
+              placeholder="Create password"
+              name="password"
+              onChange={(e)=> setPassword(e.target.value)}
+              value={password}
+            />
+          </InputWrapper>
+          {/* <Link to="/profile"> */}
           <SendButton style={{width: "420px"}}>Send</SendButton>
-          </Link>
+          {/* </Link> */}
+          {/* </form> */}
           <hr style={{ width: "100%", margin: "0px" }} />
           <ReqDemoLoginWrapper>
             <InputTitle>Are you already registered?</InputTitle>
-            <Link to="/auth" style={{ textDecoration: "none" }}>
+            <Link to="/login" style={{ textDecoration: "none" }}>
               <LoginButton>Login</LoginButton>
             </Link>
           </ReqDemoLoginWrapper>
@@ -134,4 +232,4 @@ const ReqDemoComponent = () => {
   );
 };
 
-export default ReqDemoComponent;
+export default Register;

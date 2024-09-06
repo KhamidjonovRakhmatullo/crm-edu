@@ -26,6 +26,7 @@ export const NotifLeft = styled.div`
   background: var(--Color-7, #fff);
 `;
 export const NotifSmsBox = styled.div`
+border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -67,6 +68,7 @@ export const NotifSmsTime = styled.div`
 
 ////
 export const NotifRight = styled.div`
+border: 1px solid blue;
   display: flex;
   flex-direction: column;
   align-items: start;
