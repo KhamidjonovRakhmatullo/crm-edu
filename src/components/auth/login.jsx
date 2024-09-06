@@ -65,7 +65,7 @@ const LoginComponent = () => {
           <InputTitle>
             <span style={{ color: "#2C2669" }}>Don’t have an account?</span> |
             <Link to="/register" style={{textDecoration: "none", marginLeft: "5px"}}>
-                Fill out an aplication
+                Fill out an aplication.
             </Link>
           </InputTitle>
           <Link to="/forgot-password" style={{textDecoration: "none",}}>
