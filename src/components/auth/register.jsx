@@ -93,7 +93,7 @@ const Register = () => {
       <ReqDemoBody>
         <button onClick={handleDemoValue}>DEMO</button>
         <ReqDemoLeft onSubmit={handleSubmit}>
-          <ReqDemoTitle>Fill out an aplication</ReqDemoTitle>
+          <ReqDemoTitle>Fill out an aplication.</ReqDemoTitle>
           {/* <form > */}
           <InputWrapper>
             <InputTitle>Name</InputTitle>
