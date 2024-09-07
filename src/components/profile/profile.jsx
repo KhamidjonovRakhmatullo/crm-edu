@@ -25,7 +25,7 @@ const ProfileComponent = () => {
   };
   const handleClose = () => setOpen(false);
 
-  // Data states
+  // Data states 
   const [dataList, setDataList] = useState([]);
   const [editData, setEditData] = useState(null);
   const [newName, setNewName] = useState("");
