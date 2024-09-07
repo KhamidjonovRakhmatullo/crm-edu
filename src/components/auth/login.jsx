@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 import {
   ButtonAndLang,
   LoginContainer,
@@ -16,11 +16,30 @@ import {
   SendButton,
 } from "../styles/materialsStyle";
 import login1 from '../../assets/loginAssets/loginImg.png'
+import axios from "axios";
+import { BaseURL } from "../../config/dataUri";
 
 const LoginComponent = () => {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+
+  const handleSubmit = async(event)=> {
+      event.preventDefault()
+      try {
+        const response = await axios.post(BaseURL + "/auth/login", {email, password})
+        console.log(response.data)
+        navigate("/profile")
+      } catch (error) {
+        console.log("Error to LogIn")
+        alert("Invalid credentials! Please check you Email or Password!")
+      }
+  }
   return (
     <LoginContainer>
-      <SignInContainer>
+      <SignInContainer onSubmit={handleSubmit}>
         <ButtonAndLang>
           <ReqDemoButton2 $borderRadius36 $maxWidth $padding>
             Logotype
@@ -46,6 +65,8 @@ const LoginComponent = () => {
             type="text"
             placeholder="Enter email address"
             name="user-email"
+            value={email}
+            onChange={(e)=> setEmail(e.target.value)}
           />
         </InputWrapper>
 
@@ -55,6 +76,8 @@ const LoginComponent = () => {
             type="password"
             placeholder="Enter password"
             name="user-email"
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}
           />
         </InputWrapper>
 

@@ -60,9 +60,10 @@ const Register = () => {
         password
       });
       console.log(response.data);
-      navigate("/profile");
+      navigate("/login");
     } catch (error) {
       console.error("Create account is NOT success!", error);
+      alert("Please enter valid informations!")
     }
   };
 
@@ -71,7 +72,8 @@ const Register = () => {
     setSurName("Test SurName");
     setPhoneNumber("01044440033");
     setEmail("test@mail.com");
-    setCompanyName("RRR Academy");
+    setCompanyName("Test Academy");
+    setRole("Admin")
     setPassword("112233")
   }
   return (
@@ -84,7 +86,7 @@ const Register = () => {
             <img src={LangIcon} alt="language icon" />
             ENG
           </LanguageButton>
-          <Link to="/auth" style={{ textDecoration: "none" }}>
+          <Link to="/login" style={{ textDecoration: "none" }}>
             <LogInButton>LOG IN</LogInButton>
           </Link>
         </HomeNavbarRight>
@@ -101,6 +103,7 @@ const Register = () => {
               type="text"
               placeholder="Enter name"
               name="user-name"
+              required
               onChange={(e)=> setName(e.target.value)}
               value={name}
             />
@@ -111,6 +114,7 @@ const Register = () => {
               type="text"
               placeholder="Enter surname"
               name="user-surname"
+              required
               onChange={(e)=> setSurName(e.target.value)}
               value={surname}
             />
@@ -121,6 +125,7 @@ const Register = () => {
               type="number"
               placeholder="Enter phone number"
               name="user-phone-number"
+              required
               onChange={(e)=> setPhoneNumber(e.target.value)}
               value={phoneNumber}
             />
@@ -131,6 +136,7 @@ const Register = () => {
               type="text"
               placeholder="Enter email"
               name="user-email"
+              required
               onChange={(e)=> setEmail(e.target.value)}
               value={email}
             />
@@ -141,6 +147,7 @@ const Register = () => {
               type="text"
               placeholder="Enter company name"
               name="user-company-name"
+              required
               onChange={(e)=> setCompanyName(e.target.value)}
               value={companyName}
             />
@@ -150,6 +157,7 @@ const Register = () => {
               <CheckBoxStyled
                 type="radio"
                 name="role"
+                required
                 value="Teacher"
                 onChange={(e)=> setRole(e.target.value)}
                 checked={role === "Teacher"}
@@ -160,6 +168,7 @@ const Register = () => {
               <CheckBoxStyled
                 type="radio"
                 name="role"
+                required
                 value="Student"
                 onChange={(e)=> setRole(e.target.value)}
                 checked={role === "Student"}
@@ -170,6 +179,7 @@ const Register = () => {
               <CheckBoxStyled
                 type="radio"
                 name="role"
+                required
                 value="Admin"
                 onChange={(e)=> setRole(e.target.value)}
                 checked={role === "Admin"}

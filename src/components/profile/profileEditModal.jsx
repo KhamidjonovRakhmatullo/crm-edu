@@ -12,12 +12,14 @@ const ProfileEditModal = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+
   return (
     <div>
       <EditProfile  onClick={handleOpen}>
             <EditIcon sx={{fontSize: "16px"}}/>
             Edit profile
-          </EditProfile>
+      </EditProfile>
       <Modal
         open={open}
         onClose={handleClose}

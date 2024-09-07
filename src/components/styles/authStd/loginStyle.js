@@ -11,7 +11,7 @@ export const LoginContainer = styled.div`
   padding: 30px;
 `;
 
-export const SignInContainer = styled.div`
+export const SignInContainer = styled.form`
   /* flex: 1; */
   /* border: 1px solid blue; */
   border-radius: 20px;

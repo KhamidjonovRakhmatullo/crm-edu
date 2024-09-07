@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalContainer = styled.div`
+export const ModalContainer = styled.form`
   /* border: 2px solid red;
   height: 100%;
   overflow: scroll; */
