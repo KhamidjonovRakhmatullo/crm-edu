@@ -59,10 +59,10 @@ const ProfileComponent = () => {
         email: newEmail,
         company_name: newCompany_name,
       });
-      // Optionally update the state with the new data
+      // Optionally update the state with the new data.
       console.log(response.data.data);
       handleClose();
-      fetchData(); // Refresh the data list after update
+      fetchData(); // Refresh the data list after update.
     } catch (error) {
       console.error(`Error updating data!`, error);
     }
