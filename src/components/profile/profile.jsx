@@ -52,36 +52,12 @@ const ProfileComponent = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       console.log("TEST 2")
-      setDataList(response.data.data || []); // Assuming the response structure has a "data" field.
-
+      setDataList(response.data.data || []); // Assuming the response structure has a "data" field
       console.log("TEST 3")
     } catch (error) {
       console.error("Fetch data is NOT successful", error);
     }
   };
-  
-  // const fetchData = async () => {
-  //   const token = localStorage.getItem("token")
-
-  //   try {
-  //     const response = await axios.get(`${BaseURL}/auth/me`, {
-  //       // method: "GET",  issue with fetch()
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-  //     console.log("TEST 1", response.data.data)
-  //     if(!response.ok){
-  //       throw new Error(`HTTP error! Status: ${response.status}`);
-  //     }
-  //     console.log("TEST 2")
-  //     setDataList(response.data.data || []); // Assuming the response structure has a "data" field.
-
-  //     console.log("TEST 3")
-  //   } catch (error) {
-  //     console.error("Fetch data is NOT successful", error);
-  //   }
-  // };
 
 
   const handleEdit = async (e) => {
@@ -114,7 +90,7 @@ const ProfileComponent = () => {
          </ProfileAvatar>  
          <EditProfile  onClick={()=> handleOpen(value)}>
             <EditIcon sx={{fontSize: "16px"}}/>
-            Edit profile.
+            Edit profile
          </EditProfile>
         </ProfileBG>
         <ProfileInfo> 
