@@ -16,7 +16,6 @@ import {
   SendButton,
 } from "../styles/materialsStyle";
 import login1 from '../../assets/loginAssets/loginImg.png'
-import axios from "axios";
 import { BaseURL } from "../../config/dataUri";
 
 const LoginComponent = () => {
@@ -27,16 +26,33 @@ const LoginComponent = () => {
 
 
   const handleSubmit = async(event)=> {
-      event.preventDefault()
-      try {
-        const response = await axios.post(BaseURL + "/auth/login", {email, password})
-        console.log(response.data)
-        navigate("/profile")
-      } catch (error) {
-        console.log("Error to LogIn")
-        alert("Invalid credentials! Please check you Email or Password!")
-      }
-  }
+    event.preventDefault()
+    try {
+      const response = await fetch(BaseURL + "/auth/login", {
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({email, password})
+      })
+      const data = await response.json()
+     if(response.ok){
+      localStorage.setItem(`token`, data.token)
+      alert(`Welcome back ${data.data.name}. You have successfully logged in!`)
+      navigate("/profile")
+      console.log(`Token is: ${data.token}`)
+     }else{
+      alert(
+        data.message ||
+          "Login failed. Please check your credentials and try again."
+      );
+      console.log("Login failed. Response status:", response.status);
+     }
+    } catch (error) {
+      console.error("An error occurred during login:", error);
+    }
+}
+  
   return (
     <LoginContainer>
       <SignInContainer onSubmit={handleSubmit}>
